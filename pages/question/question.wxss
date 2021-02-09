@@ -1,0 +1,61 @@
+/* pages/question/question.wxss */
+.seniorCard {
+  border: 2rpx solid #ccc;
+  box-shadow: 5px 5rpx 5rpx #ccc;
+  margin-bottom: 10rpx;
+  width: 100vw -10rpx;
+}
+.seniorCard .senInfo {
+  display: flex;
+}
+.seniorCard .senInfo .avatar {
+  width: 100rpx;
+  height: 100rpx;
+}
+.seniorCard .senIntroduction text {
+  font-weight: 600;
+}
+.questionCard {
+  background-color: #fff;
+  padding: 15rpx 10rpx;
+}
+.payCard {
+  background-color: #fff;
+}
+.payCard .totalPrice {
+  margin-left: 20rpx;
+}
+.payCard .payButton {
+  border-radius: 20rpx;
+  width: 300rpx;
+  height: 60rpx;
+  color: #fff;
+  background-color: #ffc222;
+  margin: 20rpx auto 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.questionTitle {
+  margin: 20rpx 0 10rpx 0;
+  border-left: 20rpx solid #ffc222;
+  padding: 5rpx;
+}
+.warp {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 200rpx;
+  width: calc( 100vw - 40rpx );
+  margin: 0 auto;
+}
+.addQuestionButton {
+  font-weight: 600;
+  color: #ffc222;
+}
+.appenddQuestion .delQuestionButton {
+  font-size: 30rpx;
+  float: right;
+  margin-right: 20rpx;
+}
+.addQuestionButton {
+  margin-left: 20rpx;
+}

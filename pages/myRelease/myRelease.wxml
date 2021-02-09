@@ -1,0 +1,24 @@
+<!-- pages/myRelease/myRelease.wxml -->
+<view class="myCollection">
+    <navigator url="/pages/detail/detail">
+        <view class="collectionItem" bindlongpress="handleItemRemove" wx:for="{{content}}" wx:key="id" data-index="{{index}}">
+            <view class="top">
+                <view class="jobTitle">{{item.jobtitle}}</view>
+                <view class="isFull">{{item.isFull}}</view>
+            </view>
+            <view class="jobDetail">
+                {{item.address}}|
+    {{item.day}}|
+    {{item.month}}|
+    {{item.fee}}
+            </view>
+            <view class="jobTags">
+                <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
+            </view>
+            <view class="silkbag">
+                <view class="bagTitle">前辈锦囊</view>
+                <view class="bagContent">工作量和收获成正比的一份实习1111111111111111111111，</view>
+            </view>
+        </view>
+    </navigator>
+</view>

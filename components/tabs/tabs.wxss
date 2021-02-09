@@ -1,0 +1,31 @@
+/* components/tabs/tabs.wxss */
+.tabs {
+  width: 100%;
+}
+.tabs .itemTitle {
+  font-size: 28rpx;
+  display: flex;
+}
+.tabs .itemTitle .titleItemsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tabs .itemTitle .titleItemsContainer .active {
+  margin-top: 8rpx;
+  width: 108rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+  background-color: royalblue;
+}
+.tabs .itemTitle .titleItemsContainer .nonactive {
+  margin-top: 8rpx;
+  width: 108rpx;
+  height: 8rpx;
+  background-color: rgba(255, 255, 255, 0);
+}
+.tabs .itemContent {
+  margin-top: 15rpx;
+}

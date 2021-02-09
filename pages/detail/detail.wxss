@@ -1,0 +1,167 @@
+page {
+  padding-bottom: 190rpx;
+}
+.jobCard {
+  width: calc(100vw - 100rpx);
+  border-bottom: 2rpx solid #ececec;
+  margin: 0 auto 33rpx;
+  padding: 46rpx 33rpx;
+}
+.jobCard .jobName {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.jobCard .jobDetail {
+  font-size: 28rpx;
+  display: flex;
+}
+.jobCard .jobDetail view {
+  margin-right: 52rpx;
+}
+.jobCard .jobDetail text {
+  margin-right: 20rpx;
+}
+.jobContent {
+  width: calc(100vw - 100rpx);
+  margin: auto;
+}
+.jobContent .firstTitle {
+  margin: 58rpx 0 18rpx;
+  display: flex;
+  align-items: center;
+}
+.jobContent .firstTitle view {
+  background-color: #2f88e5;
+  width: 6rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.jobContent .subtitle {
+  color: #5c5a58;
+  font-size: 28rpx;
+}
+.jobContent .duty_wrap {
+  color: #5c5a58;
+}
+.jobContent .duty_wrap .duty {
+  line-height: 40rpx;
+}
+.jobContent .mail_wrap {
+  margin-top: 50rpx;
+  color: #5c5a58;
+  display: flex;
+  border-bottom: 2rpx solid #ececec;
+}
+.jobContent .mail_wrap .mail {
+  margin-left: 20rpx;
+}
+.jobContent .seniorinfo_wrap {
+  margin: 0 auto 36rpx;
+  display: flex;
+}
+.jobContent .seniorinfo_wrap image {
+  width: 100rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+}
+.jobContent .jobTags_wrap {
+  display: flex;
+  margin: 0 auto 10rpx;
+}
+.jobContent .jobTags_wrap .jobTags {
+  display: flex;
+  margin-left: 33rpx;
+  color: #fff;
+  font-size: 22rpx;
+  padding: 6rpx 14rpx;
+  border-radius: 12rpx;
+  border: 1rpx solid #a9c5e3;
+  background-color: #a9c5e3;
+}
+.jobContent .silkbag {
+  display: flex;
+  line-height: 54rpx;
+  margin: 0 auto 10rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.jobContent .silkbag .bagContent {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.jobContent .silkbag .quotationmark {
+  align-self: flex-end;
+}
+.jobContent .tip_wrap {
+  font-size: 26rpx;
+  color: #5c5a58;
+}
+.jobContent .tip_wrap text {
+  color: #2f88e5;
+}
+.btnBottom {
+  border-top: 2rpx solid #ececec;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 145rpx;
+  background-color: #fff;
+  padding-top: 33rpx;
+}
+.btnBottom .share_wrap {
+  font-size: 24rpx;
+  font-weight: 400;
+  margin-right: 33rpx;
+  width: 48rpx;
+}
+.btnBottom .share_wrap .share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btnBottom .share_wrap button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48rpx;
+  height: 88rpx;
+  opacity: 0;
+}
+.btnBottom .collect_wrap {
+  font-size: 24rpx;
+  font-weight: 400;
+  margin-right: 33rpx;
+  width: 72rpx;
+}
+.btnBottom .collect_wrap .uncollected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btnBottom .collect_wrap .collected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #2f88e5;
+}
+.btnBottom .question {
+  background-color: #2f88e5;
+  width: 534rpx;
+  color: #fff;
+  height: 88rpx;
+}
+.btnBottom .question navigator {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

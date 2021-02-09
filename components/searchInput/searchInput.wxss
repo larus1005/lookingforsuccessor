@@ -1,0 +1,63 @@
+/* components/searchInput/searchInput.wxss */
+@font-face {
+  font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_2302707_knflgv1fhi.eot?t=1612833532909');
+  /* IE9 */
+  src: url('//at.alicdn.com/t/font_2302707_knflgv1fhi.eot?t=1612833532909#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'), url('//at.alicdn.com/t/font_2302707_knflgv1fhi.woff?t=1612833532909') format('woff'), url('//at.alicdn.com/t/font_2302707_knflgv1fhi.ttf?t=1612833532909') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('//at.alicdn.com/t/font_2302707_knflgv1fhi.svg?t=1612833532909#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-search:before {
+  content: "\e607";
+}
+.icon-weizhi:before {
+  content: "\e60f";
+}
+.icon-xin:before {
+  content: "\e629";
+}
+.icon-xin1:before {
+  content: "\e602";
+}
+.icon-wenjianbao:before {
+  content: "\e687";
+}
+.icon-Generalcalendar1-24px:before {
+  content: "\e9ca";
+}
+.icon-duihua:before {
+  content: "\e62e";
+}
+.icon-wenjianjia:before {
+  content: "\e650";
+}
+.icon-xin2-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy:before {
+  content: "\e601";
+}
+.icon--search:before {
+  content: "\e600";
+}
+.icon-xiangxiajiantou:before {
+  content: "\e616";
+}
+.searchBox {
+  background-color: #fff;
+  border-radius: 39rpx;
+  height: 78rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: rgba(192, 192, 192);
+  font-size: 28rpx;
+}
+.searchBox image {
+  width: 30rpx;
+  height: 30rpx;
+}

@@ -1,0 +1,57 @@
+/* pages/myRelease/myRelease.wxss */
+.collectionItem {
+    background-color: #fff;
+    width: ~'calc( 100vw - 40rpx )';
+    margin: 20rpx auto;
+
+    .top {
+        display: flex;
+        margin-bottom: 10rpx;
+
+        .jobTitle {
+            flex: 80%;
+        }
+
+        .isFull {
+            flex: 20%;
+        }
+    }
+
+    .jobDetail {
+        margin-bottom: 20rpx;
+    }
+
+    .jobTags {
+        display: flex;
+        margin-bottom: 10rpx;
+
+        view {
+            border: 2rpx dotted #ffc222;
+
+            margin-left: 10rpx;
+
+        }
+    }
+
+    .silkbag {
+        margin-left: 10rpx;
+        display: flex;
+
+        .bagTitle {
+            background-color: #ffc222;
+            color: #fff;
+            flex: 20%;
+            text-align: center;
+
+        }
+
+        .bagContent {
+            margin-left: 10rpx;
+            flex: 80%;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+        }
+    }
+}

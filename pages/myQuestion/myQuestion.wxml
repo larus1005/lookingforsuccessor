@@ -1,0 +1,26 @@
+<view class="myQuestion">
+    <view class="QuestionCard" wx:for="{{job}}" wx:key="id">
+        <view class="jobTitle">
+            <view>意向职位</view>
+            <view class="titleContent">{{item.jobtitle}}</view>
+            <view class="status">
+                <view class="questionStatusFinish" wx:if="{{item.status===1}}">已完成</view>
+                <view class="questionStatusWaiting" wx:elif="{{item.status===2}}">等待回答</view>
+                <view class="questionStatusRefund" wx:else="{{item.status===3}}">已退款</view>
+            </view>
+        </view>
+        <view class="question">
+            <view class="title">问题：</view>
+            <view class="content">{{item.question}}</view>
+        </view>
+        <view class="answer">
+            <view class="title">回答：</view>
+            <view class="content">{{item.answer}}</view>
+        </view>
+        <view class="bottom">
+            <view class="time">2020-12-30 23:00</view>
+            <!-- 没有跳转到评价页面 -->
+            <view class="eval" wx:if="{{item.isFinished}}">去评价</view>
+        </view>
+    </view>
+</view>

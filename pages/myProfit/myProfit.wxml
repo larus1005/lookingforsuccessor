@@ -1,0 +1,25 @@
+<!--pages/myProfit/myProfit.wxml-->
+<view class="myProfit">
+    <view class="profit">
+        <view class="amount">
+            <view class="money">
+                ￥66.66
+            </view>
+            <view>
+                待提现 ￥66.66
+            </view>
+        </view>
+        
+         <button size="mini">
+                提现
+         </button> 
+    </view>
+    <view class="explain">
+        <view class="title">
+            收益说明
+        </view>
+        <view class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.
+        </view>
+    </view>
+</view>

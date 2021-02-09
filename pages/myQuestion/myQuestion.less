@@ -1,0 +1,47 @@
+/* pages/myQuestion/myQuestion.wxss */
+.myQuestion{
+    .QuestionCard{
+        background-color: rgba(121, 121, 121, 0.3);
+        margin: 20rpx 0;
+        .jobTitle{
+            display: flex;
+            font-weight: 600;
+            .titleContent{
+                font-weight: normal; 
+                flex: 60%;          
+            }
+            .status{
+                flex: 20%;
+                text-align: center;
+                .questionStatusFinish{
+                    background-color: #69B998;
+                }
+                .questionStatusWaiting{
+                    background-color: #ffc222;
+                }
+                .questionStatusRefund{
+                    background-color: #ffc222;
+                }
+            }
+        }
+        .question{
+            display: flex;
+        }
+        .answer{
+            display: flex;
+        }
+        .bottom{
+            
+            display: flex;
+            .time{
+                flex: 80%;
+            }
+            .eval{
+                text-align: center;
+                font-weight: 600;
+                background-color: #ffc222;
+                flex: 20%;
+            }
+        }
+    }
+}

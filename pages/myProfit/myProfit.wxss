@@ -1,0 +1,31 @@
+/* pages/myProfit/myProfit.wxss */
+.myProfit .profit {
+  height: 200rpx;
+  width: calc( 100vw - 80rpx );
+  margin: 20rpx auto;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.myProfit .profit .amount .money {
+  font-size: 60rpx;
+  font-weight: 600;
+}
+.myProfit .profit button {
+  background-color: #ffc222;
+  color: #fff;
+}
+.myProfit .explain {
+  background-color: #fff;
+  width: calc( 100vw - 80rpx );
+  margin: 20rpx auto;
+  padding: 40rpx;
+}
+.myProfit .explain .title {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.myProfit .explain .content {
+  font-size: 30rpx;
+}

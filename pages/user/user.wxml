@@ -1,0 +1,48 @@
+<!-- pages/user/user.wxml -->
+<view class="user">
+    <view class="userInfo">
+        <image class="" src="../../pics/1.jpg"></image>
+        <view class="username">王了了</view>
+    </view>
+    <view class="personal">
+        <view class="personalTitle">个人中心</view>
+        <view class="personalContent">
+            <view class="myRelease">
+                <navigator url="/pages/myRelease/myRelease">
+                    <text class="iconfont icon-wenjianjia"></text>
+                    <view class="">我的发布</view>
+                </navigator>
+            </view>
+            <view class="myCollection">
+                <navigator url="/pages/myCollection/myCollection">
+                    <text class="iconfont icon-wenjianjia"></text>
+                    <view class="">我的收藏</view>
+                </navigator>
+            </view>
+            <view class="myProfit">
+                <navigator url="/pages/myProfit/myProfit">
+                    <text class="iconfont icon-wenjianjia"></text>
+                    <view class="">我的收益</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="information">
+        <view class="informationTitle">消息中心</view>
+        <view class="informationContent">
+            <view class="myQuestion">
+                <navigator url="/pages/myQuestion/myQuestion">
+                    <text class="iconfont icon-duihua"></text>
+                    <view class="">我的提问</view>
+                </navigator>
+            </view>
+            <view class="myAnswer">
+                <navigator url="/pages/myAnswer/myAnswer">
+                    <text class="iconfont icon-duihua"></text>
+                    <view class="">收到的提问</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <tabbar tabbar="{{tabbar}}"></tabbar>
+</view>

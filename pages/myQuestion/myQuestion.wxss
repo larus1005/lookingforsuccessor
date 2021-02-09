@@ -1,0 +1,44 @@
+/* pages/myQuestion/myQuestion.wxss */
+.myQuestion .QuestionCard {
+  background-color: rgba(121, 121, 121, 0.3);
+  margin: 20rpx 0;
+}
+.myQuestion .QuestionCard .jobTitle {
+  display: flex;
+  font-weight: 600;
+}
+.myQuestion .QuestionCard .jobTitle .titleContent {
+  font-weight: normal;
+  flex: 60%;
+}
+.myQuestion .QuestionCard .jobTitle .status {
+  flex: 20%;
+  text-align: center;
+}
+.myQuestion .QuestionCard .jobTitle .status .questionStatusFinish {
+  background-color: #69B998;
+}
+.myQuestion .QuestionCard .jobTitle .status .questionStatusWaiting {
+  background-color: #ffc222;
+}
+.myQuestion .QuestionCard .jobTitle .status .questionStatusRefund {
+  background-color: #ffc222;
+}
+.myQuestion .QuestionCard .question {
+  display: flex;
+}
+.myQuestion .QuestionCard .answer {
+  display: flex;
+}
+.myQuestion .QuestionCard .bottom {
+  display: flex;
+}
+.myQuestion .QuestionCard .bottom .time {
+  flex: 80%;
+}
+.myQuestion .QuestionCard .bottom .eval {
+  text-align: center;
+  font-weight: 600;
+  background-color: #ffc222;
+  flex: 20%;
+}

@@ -1,0 +1,207 @@
+page {
+    padding-bottom: 190rpx;
+}
+
+.jobCard {
+    width: ~'calc(100vw - 100rpx)';
+    border-bottom: 2rpx solid rgb(236, 236, 236);
+    margin: 0 auto 33rpx;
+    padding: 46rpx 33rpx;
+
+    .jobName {
+        font-size: 40rpx;
+        font-weight: 600;
+
+    }
+
+    .jobDetail {
+        font-size: 28rpx;
+        display: flex;
+
+        view {
+            margin-right: 52rpx;
+        }
+        text{
+            margin-right: 20rpx;
+        }
+    }
+
+}
+
+.jobContent {
+    width: ~'calc(100vw - 100rpx)';
+    margin: auto;
+
+    .firstTitle {
+        margin: 58rpx 0 18rpx;
+        display: flex;
+        align-items: center;
+
+        view {
+            background-color: rgb(47, 136, 229);
+            width: 6rpx;
+            height: 30rpx;
+            margin-right: 20rpx;
+        }
+    }
+
+    .subtitle {
+        color: rgb(92, 90, 88);
+        font-size: 28rpx;
+    }
+
+    .duty_wrap {
+
+        color: rgb(92, 90, 88);
+
+        .duty {
+            line-height: 40rpx;
+        }
+    }
+
+    .mail_wrap {
+        margin-top: 50rpx;
+        color: rgb(92, 90, 88);
+        display: flex;
+        border-bottom: 2rpx solid rgb(236, 236, 236);
+
+        .mail {
+            margin-left: 20rpx;
+        }
+    }
+
+    .seniorinfo_wrap {
+        margin: 0 auto 36rpx;
+        display: flex;
+
+        image {
+            width: 100rpx;
+            border-radius: 50%;
+            margin-right: 24rpx;
+
+        }
+
+    }
+
+    .jobTags_wrap {
+        display: flex;
+        margin: 0 auto 10rpx;
+
+        .jobTags {
+            display: flex;
+            margin-left: 33rpx;
+            color: #fff;
+            font-size: 22rpx;
+            padding: 6rpx 14rpx;
+            border-radius: 12rpx;
+            border: 1rpx solid rgb(169, 197, 227);
+            background-color: rgb(169, 197, 227);
+        }
+    }
+
+    .silkbag {
+        display: flex;
+        font-size: 28rpx;
+        line-height: 54rpx;
+        margin: 0 auto 10rpx;
+        font-size: 28rpx;
+        font-weight: 600;
+
+        .bagContent {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .quotationmark {
+            align-self: flex-end;
+        }
+
+    }
+
+    .tip_wrap {
+        font-size: 26rpx;
+        color: rgb(92, 90, 88);
+
+        text {
+            color: rgb(47, 136, 229);
+        }
+    }
+
+}
+
+
+
+.btnBottom {
+    border-top: 2rpx solid rgb(236, 236, 236);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 145rpx;
+    background-color: #fff;
+    padding-top: 33rpx;
+
+    .share_wrap {
+        font-size: 24rpx;
+        font-weight: 400;
+        margin-right: 33rpx;
+        width: 48rpx;
+        .share {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 48rpx;
+            height: 88rpx;
+            opacity: 0;
+        }
+    }
+
+    .collect_wrap {
+        font-size: 24rpx;
+        font-weight: 400;
+        margin-right: 33rpx;
+        width: 72rpx;
+
+        .uncollected {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .collected {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgb(47, 136, 229);
+        }
+
+    }
+
+    .question {
+        background-color: rgb(47, 136, 229);
+        width: 534rpx;
+        color: #fff;
+        height: 88rpx;
+
+        navigator {
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+    }
+}

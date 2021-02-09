@@ -1,0 +1,89 @@
+<view class="detail">
+    <!-- 职位简介 -->
+    <view class="jobCard">
+        <view class="jobName">{{job.jobtitle}}</view>
+        <view class="jobDetail">
+            <text class="iconfont icon-weizhi"></text>
+            <view>{{job.address}}</view>
+            <text class="iconfont icon-wenjianbao"></text>
+            <view>{{job.type}}</view>
+             <text class="iconfont icon-Generalcalendar1-24px"></text>
+            <view>{{job.releasetime}}</view>
+        </view>
+    </view>
+    <!-- 职位详细内容 -->
+    <view class="jobContent">
+        <!-- 职位描述部分 -->
+        <view class="firstTitle">
+            <view></view>
+            <text>职位描述</text>
+        </view>
+        <view class="duty_wrap">
+            <view class="subTitle">岗位职责:</view>
+            <view class="duty">
+                1.负责美妆营销活动推广，参与制定不同层级用户推广方案，进行资源排期、物料准备、效果分析；
+            2.参与营销活动创意策划，选品，跟进活动招商；
+            3.活动页面设计、上线及效果反馈；
+            4.营销费用管理及投产效果监测及优化。
+            </view>
+        </view>
+        <view class="mail_wrap">
+            <view class="subTitle">投递邮箱</view>
+            <view class="mail">hr@meituan.com</view>
+        </view>
+        <!-- 前辈锦囊部分 -->
+        <view class="firstTitle">
+            <view></view>
+            <text>前辈锦囊</text>
+        </view>
+        <view class="seniorinfo_wrap">
+            <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
+            <view class="seniorinfo">
+                <view class="seniorName">{{seniorName}}</view>
+                <view class="lastLogin">{{lastLogin}}天前来过</view>
+            </view>
+        </view>
+        <!-- 这份实习+巴拉巴拉 -->
+        <view class="jobTags_wrap">
+            <view>这份实习</view>
+            <view class="jobTags" wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
+        </view>
+        <view class="silkbag">
+            <view>“</view>
+            <view class="bagContent">
+                开始的工作会比较基础，注重日常积累，后续会有机会从0到1的独立承接项目开始的工作会比较基础，注重日常积累，后续会有机会从0到1的独立承接项目……
+            </view>
+            <view class="quotationmark">”</view>
+        </view>
+        <view class="tip_wrap">
+            想要获取更多信息可以通过下方<text>咨询前辈</text>向我提问哟！
+        </view>
+          
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="btnBottom">
+        <view class="share_wrap">
+            <view class="share">
+                <text class="iconfont icon-ArtboardCopy"></text>
+                <view>分享</view>
+                <button open-type="share">1</button>
+            </view>
+            <!-- <button open-type="share"></button> -->
+        </view>
+        <view class="collect_wrap" bind:tap="handleCollect">
+            <view class="uncollected" wx:if="{{!isCollect}}">
+                <text class="iconfont icon-xin2-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy"></text>
+                <view>收藏</view>
+
+            </view>
+            <view class="collected" wx:else>
+                <text class="iconfont icon-xin2-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy"></text>
+                <view>已收藏</view>
+            </view>
+        </view>
+        <view class="question">
+            <navigator url="/pages/question/question">咨询前辈(1.99元/问)</navigator>
+        </view>
+    </view>
+</view>

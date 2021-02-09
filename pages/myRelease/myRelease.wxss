@@ -1,0 +1,45 @@
+/* pages/myRelease/myRelease.wxss */
+.collectionItem {
+  background-color: #fff;
+  width: calc( 100vw - 40rpx );
+  margin: 20rpx auto;
+}
+.collectionItem .top {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.collectionItem .top .jobTitle {
+  flex: 80%;
+}
+.collectionItem .top .isFull {
+  flex: 20%;
+}
+.collectionItem .jobDetail {
+  margin-bottom: 20rpx;
+}
+.collectionItem .jobTags {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.collectionItem .jobTags view {
+  border: 2rpx dotted #ffc222;
+  margin-left: 10rpx;
+}
+.collectionItem .silkbag {
+  margin-left: 10rpx;
+  display: flex;
+}
+.collectionItem .silkbag .bagTitle {
+  background-color: #ffc222;
+  color: #fff;
+  flex: 20%;
+  text-align: center;
+}
+.collectionItem .silkbag .bagContent {
+  margin-left: 10rpx;
+  flex: 80%;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
