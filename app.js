@@ -56,6 +56,12 @@ App({
         }
       }
     })
+    // 云函数
+    wx.cloud.init({
+
+      traceUser: true,
+
+  })
   },
   onShow: function () {
     //隐藏系统tabbar

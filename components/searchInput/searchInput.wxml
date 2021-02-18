@@ -1,8 +1,6 @@
 <!-- components/searchInput/searchInput.wxml -->
-<view class="searchBox">
-        
-        <image class="" src="../../pics/search.png" mode="widthFix">
-                
+<view class="searchBox">        
+        <image class="" src="../../pics/search.png" mode="widthFix">          
         </image>
         <input type="text" placeholder="搜索职位关键词" />
 </view>

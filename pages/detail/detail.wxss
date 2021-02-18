@@ -1,5 +1,6 @@
 page {
   padding-bottom: 190rpx;
+  background-color: #fff;
 }
 .jobCard {
   width: calc(100vw - 100rpx);
@@ -10,6 +11,7 @@ page {
 .jobCard .jobName {
   font-size: 40rpx;
   font-weight: 600;
+  margin-bottom: 20rpx;
 }
 .jobCard .jobDetail {
   font-size: 28rpx;
@@ -44,13 +46,14 @@ page {
   color: #5c5a58;
 }
 .jobContent .duty_wrap .duty {
-  line-height: 40rpx;
+  line-height: 54rpx;
 }
 .jobContent .mail_wrap {
   margin-top: 50rpx;
   color: #5c5a58;
   display: flex;
   border-bottom: 2rpx solid #ececec;
+  padding-bottom: 40rpx;
 }
 .jobContent .mail_wrap .mail {
   margin-left: 20rpx;

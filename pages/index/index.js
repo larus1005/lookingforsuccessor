@@ -1,64 +1,66 @@
 //index.js
 //获取应用实例
 const app = getApp()
-import {request} from "../../request/index.js"
+import {
+  request
+} from "../../request/index.js"
 Page({
   data: {
     //tabbar
     tabbar: {},
     // 城市
-    currentCity:'',
+    currentCity: '',
     // motto: 'Hello World',
     // userInfo: {},
     // hasUserInfo: false,
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
     // 获取轮播图数据
-    swiperList:[],
+    swiperList: [],
     current: 'tab1',
-    tabs:[
-      {
-        id:0,
-        name:"运营/产品",
-        isActive:true
+    tabs: [{
+        id: 0,
+        name: "运营/产品",
+        isActive: true
       },
       {
-        id:1,
-        name:"研发",
-        isActive:false
+        id: 1,
+        name: "研发",
+        isActive: false
       },
       {
-        id:2,
-        name:"其他",
-        isActive:false
+        id: 2,
+        name: "其他",
+        isActive: false
       }
     ],
-    content:{
-      jobtitle:'腾讯-产品实习生（内容中台）',
-      address:'上海',
-      type:'研发',
-      time:'1-23'
+    content: {
+      jobtitle: '腾讯-产品实习生（内容中台）',
+      address: '上海',
+      type: '研发',
+      time: '1-23'
     },
-    tags:[
-      {
-        id:0,
-        name:"加班适中",
+    tags: [{
+        id: 0,
+        name: "加班适中",
       },
       {
-        id:1,
-        name:"挑战性强",
+        id: 1,
+        name: "挑战性强",
       },
       {
-        id:2,
-        name:"收获多多",
+        id: 2,
+        name: "收获多多",
       }
     ]
   },
 
-// 切换tab栏+内容
-  handleItem(e){
+  // 切换tab栏+内容
+  handleItem(e) {
     const index = e.detail;
-    let {tabs} = this.data
-    tabs.forEach((v,i) => i===index?v.isActive=true:v.isActive=false);
+    let {
+      tabs
+    } = this.data
+    tabs.forEach((v, i) => i === index ? v.isActive = true : v.isActive = false);
     this.setData({
       tabs
     })
@@ -70,16 +72,18 @@ Page({
   //   })
   // },
   // 获取轮播图数据
-  getSwiperList(){
-    request({url:"/home/swiperdata"})
-    .then(result=>{
-      this.setData({
-        swiperList:result
+  getSwiperList() {
+    request({
+        url: "/home/swiperdata"
       })
-    })
+      .then(result => {
+        this.setData({
+          swiperList: result
+        })
+      })
   },
   // 利用微信API获取系统信息
-  getTopHeight(){
+  getTopHeight() {
 
   },
 
@@ -115,20 +119,28 @@ Page({
     // }
     this.getSwiperList()
   },
-  onShow:function(){
+  onShow: function () {
     app.editTabbar();
     const currentCity = app.globalData.currentCity
     console.log(app.globalData.currentCity);
     this.setData({
       currentCity
     })
+    wx.cloud.callFunction({
+      name: 'getPositionByType',
+      data: {
+        type: '研发' //要自己传参数
+      }
+    }).then(res => {
+      console.log(res.result.data.data)
+    }).catch(console.error)
   }
-//   getUserInfo: function(e) {
-//     console.log(e)
-//     app.globalData.userInfo = e.detail.userInfo
-//     this.setData({
-//       userInfo: e.detail.userInfo,
-//       hasUserInfo: true
-//     })
-//   }
+  //   getUserInfo: function(e) {
+  //     console.log(e)
+  //     app.globalData.userInfo = e.detail.userInfo
+  //     this.setData({
+  //       userInfo: e.detail.userInfo,
+  //       hasUserInfo: true
+  //     })
+  //   }
 })

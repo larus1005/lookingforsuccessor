@@ -1,8 +1,6 @@
 /**app.wxss**/
 @import "./style/iconfont.wxss";
 page {
-  background-color: #F8F8F8;
+  background-color: #fff;
   height: 100%;
-  font-size: 32rpx;
-  line-height: 1.6;
 }

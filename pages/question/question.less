@@ -1,10 +1,10 @@
 /* pages/question/question.wxss */
 
 .seniorCard {
-    border: 2rpx solid #ccc;
-    box-shadow: 5px 5rpx 5rpx #ccc;
-    margin-bottom: 10rpx;
+    margin: 46rpx 50rpx 10rpx 50rpx;
     width: 100vw -10rpx;
+    border-bottom: 2rpx solid rgb(47, 136, 229);
+    padding-bottom: 24rpx;
 
     .senInfo {
         display: flex;
@@ -12,6 +12,8 @@
         .avatar {
             width: 100rpx;
             height: 100rpx;
+            border-radius: 50%;
+            margin-right: 50rpx;
         }
 
         .sennickname {}
@@ -20,6 +22,8 @@
     }
 
     .senIntroduction {
+        font-size: 28rpx;
+        line-height: 54rpx;
         text {
             font-weight: 600;
         }
@@ -27,55 +31,87 @@
 }
 
 .questionCard {
-    background-color: #fff;
-    padding: 15rpx 10rpx;
+    margin:0 auto 0 ;
+    width: ~'calc(100vw - 100rpx)';
+    .title {
+        display: flex;
+        border-bottom: 24rpx;
+        margin-top: 20rpx;
+        
 
-   
+        .border {
+            width: 8rpx;
+            height: 38rpx;
+            background-color: rgb(47, 136, 229);
+            margin-right: 16rpx;
+        }
+
+        .questionTitle {
+
+            color: rgb(43, 40, 37);
+            font-size: 28rpx;
+            font-weight: 600;
+        }
+    }
+
+    .questionContent {
+        margin-top: 24rpx;
+        .warp {
+            background-color: rgba(238, 239, 241);
+            height: 276rpx;
+            width: auto;
+            padding: 10rpx;
+            color: rgb(170, 170, 170);
+            font-size: 22rpx;
+        }
+    }
+
+    .appenddQuestion {
+        .title {
+            display: flex;
+
+            .delQuestionButton {
+                color: rgb(47, 136, 229);
+                font-size: 28rpx;
+                margin-left: auto;
+
+            }
+
+        }
+    }
+    .addQuestionButton {
+        font-size: 28rpx;
+        font-weight: 800;
+        color: rgb(47, 136, 229);
+        margin-top: 40rpx;
+    }
+
+
+
+
 }
 
 .payCard {
-    background-color: #fff;
-    .totalPrice{
-        margin-left: 20rpx;
+    width: ~'calc(100vw - 100rpx)';
+    margin: 54rpx auto 0;
+    .totalPrice {
+        font-size: 28rpx;
     }
-    .payButton{
-        border-radius: 20rpx;
-        width: 300rpx;
-        height: 60rpx;
+
+    .payButton {
+        border-radius: 5rpx;
+        width: auto;
+        height: 88rpx;
         color: #fff;
-        background-color: #ffc222;
-        margin: 20rpx auto 20rpx;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        background-color: rgb(47, 136, 229);
+        margin: 54rpx auto 20rpx;
+        text-align: center;
+        line-height: 88rpx;
     }
-}
-
-.questionTitle {
-    margin: 20rpx 0 10rpx 0;
-    border-left: 20rpx solid #ffc222;
-    padding: 5rpx;
-}
-
-
-.warp {
-    background-color: rgba(0, 0, 0, 0.1);
-    height: 200rpx;
-    width: ~'calc( 100vw - 40rpx )';
-    margin: 0 auto;
-
-}
-.addQuestionButton {
-    font-weight: 600;
-    color: #ffc222;
-}
-.appenddQuestion{
-    .delQuestionButton{
-        font-size: 30rpx;
-        float: right;
-        margin-right: 20rpx;
+    .tip{
+        font-size: 20rpx;
+        color: rgb(153,153,153);
+        text-align: center;
     }
-}
-.addQuestionButton{
-    margin-left: 20rpx;
+
 }

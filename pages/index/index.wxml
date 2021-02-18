@@ -20,7 +20,9 @@
    
     <searchInput></searchInput>
     <view class="cancel">
-      取消
+     <image class="" src="../../pics/reset.png">
+       
+     </image>
     </view>
   </view>
   <!-- 轮播图 -->
@@ -36,6 +38,32 @@
     <view class="itemContianer">
       <!-- 运营/产品模块 -->
       <view wx:if="{{tabs[0].isActive}}">
+      <view class="jobCard" >
+        <navigator url="/pages/detail/detail">
+          <view class="job">
+            <view class="top">
+              <view class="jobTitle">{{content.jobtitle}}</view>
+            </view>
+            <view class="jobDetail">
+              {{content.address}}|
+          {{content.type}}|
+          {{content.time}}
+            </view>
+            <view class="jobTags">
+              <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
+            </view>
+            <view class="silkbag">
+              <view class="portrait">
+                 <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
+              </view>
+              <view class="bagContent">
+                “工作量和收获成正比的一份实习，非常能够提升个人能力和素质，需要具有良好的沟通能力”
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+        
         <navigator url="/pages/detail/detail">
           <view class="job">
             <view class="top">

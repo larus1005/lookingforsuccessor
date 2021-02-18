@@ -10,7 +10,7 @@ Page({
     appendQuestionList:[
      
     ],
-    totalqnum:2,
+    totalqnum:1,
     
   },
   // 获取新增问题的输入内容 修改新增问题列表

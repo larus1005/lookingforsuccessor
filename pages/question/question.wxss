@@ -1,9 +1,9 @@
 /* pages/question/question.wxss */
 .seniorCard {
-  border: 2rpx solid #ccc;
-  box-shadow: 5px 5rpx 5rpx #ccc;
-  margin-bottom: 10rpx;
+  margin: 46rpx 50rpx 10rpx 50rpx;
   width: 100vw -10rpx;
+  border-bottom: 2rpx solid #2f88e5;
+  padding-bottom: 24rpx;
 }
 .seniorCard .senInfo {
   display: flex;
@@ -11,51 +11,80 @@
 .seniorCard .senInfo .avatar {
   width: 100rpx;
   height: 100rpx;
+  border-radius: 50%;
+  margin-right: 50rpx;
+}
+.seniorCard .senIntroduction {
+  font-size: 28rpx;
+  line-height: 54rpx;
 }
 .seniorCard .senIntroduction text {
   font-weight: 600;
 }
 .questionCard {
-  background-color: #fff;
-  padding: 15rpx 10rpx;
+  margin: 0 auto 0 ;
+  width: calc(100vw - 100rpx);
+}
+.questionCard .title {
+  display: flex;
+  border-bottom: 24rpx;
+  margin-top: 20rpx;
+}
+.questionCard .title .border {
+  width: 8rpx;
+  height: 38rpx;
+  background-color: #2f88e5;
+  margin-right: 16rpx;
+}
+.questionCard .title .questionTitle {
+  color: #2b2825;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.questionCard .questionContent {
+  margin-top: 24rpx;
+}
+.questionCard .questionContent .warp {
+  background-color: rgba(238, 239, 241);
+  height: 276rpx;
+  width: auto;
+  padding: 10rpx;
+  color: #aaaaaa;
+  font-size: 22rpx;
+}
+.questionCard .appenddQuestion .title {
+  display: flex;
+}
+.questionCard .appenddQuestion .title .delQuestionButton {
+  color: #2f88e5;
+  font-size: 28rpx;
+  margin-left: auto;
+}
+.questionCard .addQuestionButton {
+  font-size: 28rpx;
+  font-weight: 800;
+  color: #2f88e5;
+  margin-top: 40rpx;
 }
 .payCard {
-  background-color: #fff;
+  width: calc(100vw - 100rpx);
+  margin: 54rpx auto 0;
 }
 .payCard .totalPrice {
-  margin-left: 20rpx;
+  font-size: 28rpx;
 }
 .payCard .payButton {
-  border-radius: 20rpx;
-  width: 300rpx;
-  height: 60rpx;
+  border-radius: 5rpx;
+  width: auto;
+  height: 88rpx;
   color: #fff;
-  background-color: #ffc222;
-  margin: 20rpx auto 20rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #2f88e5;
+  margin: 54rpx auto 20rpx;
+  text-align: center;
+  line-height: 88rpx;
 }
-.questionTitle {
-  margin: 20rpx 0 10rpx 0;
-  border-left: 20rpx solid #ffc222;
-  padding: 5rpx;
-}
-.warp {
-  background-color: rgba(0, 0, 0, 0.1);
-  height: 200rpx;
-  width: calc( 100vw - 40rpx );
-  margin: 0 auto;
-}
-.addQuestionButton {
-  font-weight: 600;
-  color: #ffc222;
-}
-.appenddQuestion .delQuestionButton {
-  font-size: 30rpx;
-  float: right;
-  margin-right: 20rpx;
-}
-.addQuestionButton {
-  margin-left: 20rpx;
+.payCard .tip {
+  font-size: 20rpx;
+  color: #999999;
+  text-align: center;
 }

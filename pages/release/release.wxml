@@ -90,3 +90,4 @@
     <textarea placeholder="快快给继任同学留下一些小Tips吧，可以是面试建议、工作复盘等。认真填写的前辈锦囊更能吸引继任同学的付费咨询哟！"></textarea>
 </view>
 <view class="submit" bindtap="Submit">提 交</view>
+<view class="tip">提交遇到问题，请联系小助手wechat：WZLan9767</view>

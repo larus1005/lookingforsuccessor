@@ -5,48 +5,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    job:{
-      jobtitle:'腾讯-产品实习生（内容中台）',
-      address:'上海',
-      type:'产品',
-      releasetime:'1月23日',
-      
-    },
-    tags:[
-      {
-        id:0,
-        name:"加班适中",
-      },
-      {
-        id:1,
-        name:"挑战性强",
-      },
-      {
-        id:2,
-        name:"收获多多",
-      }
-    ],
-    lastLogin:'2',
-    seniorName:'王了了',
-    isCollect:false
+    position: {},
+    saved: false,
+    user: {}
   },
-  // 收藏成功提示
-  handleCollect(e){
-    const {isCollect} = this.data;
-    if(isCollect){
-      wx.showToast({
-        title: '取消收藏',
-        icon:'false',
-        mask:true
-      })
-    }else{
-      wx.showToast({
-        title: '收藏成功',
-        mask:'true'
-      })
+  // 收藏操作
+  handleCollect(e) {
+    const {
+      saved
+    } = this.data;
+    if (saved) {
+      wx.cloud.callFunction({
+        name: 'cancledSave',
+        data: {
+          pid: '9f2a34705fe990e400d544686e3fec5e'
+        },
+      }).then(res => {
+        console.log(res)
+        wx.showModal({
+          title: '成功',
+          content: '取消收藏',
+          showCancel: false,
+          mask: true
+        })
+      }).catch(console.error)
+    } else {
+      wx.cloud.callFunction({
+        name: 'savePosition',
+        data: {
+          pid: '9f2a34705fe990e400d544686e3fec5e'
+        },
+      }).then(res => {
+        console.log(res) //返回两条记录
+        wx.showModal({
+          title: '成功',
+          content: '收藏成功',
+          showCancel: false,
+          mask: true
+        })
+      }).catch(console.error)
     }
     this.setData({
-      isCollect:!isCollect
+      saved: !saved
     })
   },
   /**
@@ -61,13 +61,39 @@ Page({
    */
   onReady: function () {
 
+    // const userId = 'o8o4f5EW_DW2nckPcH2vpTC1krcY'
+
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // 获取职位信息
+    wx.cloud.callFunction({
+      name: 'getPositionById',
+      data: {
+        pid: "9f2a34705fe990e400d544686e3fec5e"
+      }
+    }).then(res => {
+      console.log(res)
+      this.setData({
+        position: res.result.data.list[0]
+      })
+      console.log(this.data.position);
+      wx.cloud.callFunction({
+        name: 'getUser',
+        data: {
+          userid: this.data.position.user_id,
+        },
+      }).then(res => {
+        const user = res.result.data.data[0]
+        this.setData({
+          user
+        })
+      }).catch(console.error)
+    }).catch(console.error)
   },
 
   /**
