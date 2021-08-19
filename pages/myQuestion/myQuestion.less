@@ -1,45 +1,95 @@
 /* pages/myQuestion/myQuestion.wxss */
-.myQuestion{
-    .QuestionCard{
-        background-color: rgba(121, 121, 121, 0.3);
-        margin: 20rpx 0;
-        .jobTitle{
+.myQuestion {
+    .null_question {
+        margin-top: 75rpx;
+
+        image {
+            width: 300rpx;
+            display: block;
+            margin: auto;
+        }
+
+        view {
+            font-size: 28rpx;
+            color: rgb(92, 90, 88);
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .QuestionCard {
+        width: calc(100vw - 100rpx);
+        border-bottom: 2rpx solid #ececec;
+        margin: 0 auto 33rpx;
+
+        .jobTitle {
+            font-size: 28rpx;
             display: flex;
-            font-weight: 600;
-            .titleContent{
-                font-weight: normal; 
-                flex: 60%;          
+            margin: 20rpx 0;
+            font-weight: 500rpx;
+            align-items: center;
+
+            .titleContent {
+                font-weight: normal;
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1; 
             }
-            .status{
-                flex: 20%;
+
+            text {
+                font-size: 20rpx;
+                color: rgb(181, 179, 177);
+            }
+
+            .status {
                 text-align: center;
-                .questionStatusFinish{
-                    background-color: #69B998;
+                margin-left: auto;
+
+                .questionStatusFinish {
+                    width: 112rpx;
+                    color: rgb(47, 136, 229);
                 }
-                .questionStatusWaiting{
-                    background-color: #ffc222;
+
+                .questionStatusWaiting {
+                    width: 112rpx;
+                    color: rgb(181, 179, 177);
                 }
-                .questionStatusRefund{
-                    background-color: #ffc222;
+
+                .questionStatusRefund {
+                    width: 112rpx;
+                    color: rgb(181, 179, 177);
                 }
             }
         }
-        .question{
-            display: flex;
+
+        .question {
+            font-size: 28rpx;
+            color: rgb(92, 90, 88);
+            line-height: 58rpx;
         }
-        .answer{
+
+        .bottom {
+            margin-bottom: 36rpx;
             display: flex;
-        }
-        .bottom{
-            
-            display: flex;
-            .time{
+
+            .time {
+                margin-top: 22rpx;
+                color: rgb(181, 179, 177);
+                font-size: 24rpx;
                 flex: 80%;
+
             }
-            .eval{
+
+            .eval {
+                font-size: 28rpx;
                 text-align: center;
-                font-weight: 600;
-                background-color: #ffc222;
+                line-height: 58rpx;
+                width: 128rpx;
+                height: 58rpx;
+                border: 2rpx solid rgb(47, 136, 229);
+                color: rgb(47, 136, 229);
+                border-radius: 8rpx;
                 flex: 20%;
             }
         }

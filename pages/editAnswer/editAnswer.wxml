@@ -1,0 +1,18 @@
+<!-- pages/editAnswer/editAnswer.wxml -->
+<view class="editAnswer">
+    <view class="QuestionCard">
+        <view class="jobTitle">
+            <view>意向职位:{{question.positionDetail[0].company}}{{question.positionDetail[0].name}}</view>
+        </view>
+        <view class="question">{{question.question}}</view>
+        <view class="bottom">
+            <view class="questioner">来自{{quizzer}}的提问</view>
+            <view class="time">发布于{{question.positionDetail[0].create_time}}</view>
+        </view>
+    </view>
+    <view class="editAnswer_wrap">
+        <view class="title">编辑回答</view>
+        <textarea placeholder="建议回答字数区间在80-400字。" bindinput='replyVal'></textarea>
+    </view>
+    <view class="submit_button" bind:tap="saveReply">提  交</view>
+</view>

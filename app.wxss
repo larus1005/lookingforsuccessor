@@ -3,4 +3,6 @@
 page {
   background-color: #fff;
   height: 100%;
+  color: rgb(43, 40, 37);
+  font-size: 28rpx;
 }

@@ -1,44 +1,78 @@
-/* pages/myCollection/myCollection.wxss */
-/* pages/myRelease/myRelease.wxss */
-.collectionItem {
-  background-color: #fff;
-  width: calc( 100vw - 40rpx );
-  margin: 20rpx auto;
-}
-.collectionItem .top {
+view .tips {
+  padding: 0 50rpx;
   display: flex;
-  margin-bottom: 10rpx;
+  align-items: center;
+  background-color: #e6f7ff;
+  color: #2588e5;
+  font-size: 28rpx;
+  height: 64rpx;
+  border: 2rpx solid #92d5ff;
 }
-.collectionItem .top .jobTitle {
-  flex: 80%;
+view .tips .content {
+  margin-left: 30rpx;
 }
-.collectionItem .top .isFull {
-  flex: 20%;
+view .tips .close {
+  color: #5c5a58;
+  margin-left: auto;
 }
-.collectionItem .jobDetail {
-  margin-bottom: 20rpx;
+view .null_collection {
+  margin-top: 75rpx;
 }
-.collectionItem .jobTags {
-  display: flex;
-  margin-bottom: 10rpx;
+view .null_collection image {
+  width: 300rpx;
+  display: block;
+  margin: auto;
 }
-.collectionItem .jobTags view {
-  border: 2rpx dotted #ffc222;
-  margin-left: 10rpx;
-}
-.collectionItem .silkbag {
-  margin-left: 10rpx;
-  display: flex;
-}
-.collectionItem .silkbag .bagTitle {
-  background-color: #ffc222;
-  color: #fff;
-  flex: 20%;
+view .null_collection view {
+  font-size: 28rpx;
+  color: #5c5a58;
+  width: 100%;
   text-align: center;
 }
-.collectionItem .silkbag .bagContent {
-  margin-left: 10rpx;
-  flex: 80%;
+view .myCollection .job {
+  border-bottom: 4rpx solid rgba(92, 90, 88, 0.1);
+  padding: 23rpx 50rpx;
+}
+view .myCollection .job .jobTitle {
+  font-size: 34rpx;
+  margin-bottom: 10rpx;
+}
+view .myCollection .job .jobDetail {
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  color: #5c5a58;
+}
+view .myCollection .job .jobTags {
+  display: flex;
+  margin-bottom: 24rpx;
+}
+view .myCollection .job .jobTags view {
+  width: 116rpx;
+  height: 44rpx;
+  border-radius: 12rpx;
+  font-size: 22rpx;
+  color: #fff;
+  line-height: 44rpx;
+  text-align: center;
+  background-color: #a9c5e3;
+  margin-right: 28rpx;
+}
+view .myCollection .job .silkbag {
+  display: flex;
+  align-items: center;
+  height: 52rpx;
+}
+view .myCollection .job .silkbag .portrait image {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+}
+view .myCollection .job .silkbag .bagContent {
+  margin-left: 20rpx;
+  color: #5c5a58;
+  font-size: 24rpx;
+  height: 34rpx;
+  line-height: 34rpx;
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;

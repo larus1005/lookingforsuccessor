@@ -1,44 +1,80 @@
 /* pages/myQuestion/myQuestion.wxss */
+.myQuestion .null_question {
+  margin-top: 75rpx;
+}
+.myQuestion .null_question image {
+  width: 300rpx;
+  display: block;
+  margin: auto;
+}
+.myQuestion .null_question view {
+  font-size: 28rpx;
+  color: #5c5a58;
+  width: 100%;
+  text-align: center;
+}
 .myQuestion .QuestionCard {
-  background-color: rgba(121, 121, 121, 0.3);
-  margin: 20rpx 0;
+  width: calc(100vw - 100rpx);
+  border-bottom: 2rpx solid #ececec;
+  margin: 0 auto 33rpx;
 }
 .myQuestion .QuestionCard .jobTitle {
+  font-size: 28rpx;
   display: flex;
-  font-weight: 600;
+  margin: 20rpx 0;
+  font-weight: 500rpx;
+  align-items: center;
 }
 .myQuestion .QuestionCard .jobTitle .titleContent {
   font-weight: normal;
-  flex: 60%;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.myQuestion .QuestionCard .jobTitle text {
+  font-size: 20rpx;
+  color: #b5b3b1;
 }
 .myQuestion .QuestionCard .jobTitle .status {
-  flex: 20%;
   text-align: center;
+  margin-left: auto;
 }
 .myQuestion .QuestionCard .jobTitle .status .questionStatusFinish {
-  background-color: #69B998;
+  width: 112rpx;
+  color: #2f88e5;
 }
 .myQuestion .QuestionCard .jobTitle .status .questionStatusWaiting {
-  background-color: #ffc222;
+  width: 112rpx;
+  color: #b5b3b1;
 }
 .myQuestion .QuestionCard .jobTitle .status .questionStatusRefund {
-  background-color: #ffc222;
+  width: 112rpx;
+  color: #b5b3b1;
 }
 .myQuestion .QuestionCard .question {
-  display: flex;
-}
-.myQuestion .QuestionCard .answer {
-  display: flex;
+  font-size: 28rpx;
+  color: #5c5a58;
+  line-height: 58rpx;
 }
 .myQuestion .QuestionCard .bottom {
+  margin-bottom: 36rpx;
   display: flex;
 }
 .myQuestion .QuestionCard .bottom .time {
+  margin-top: 22rpx;
+  color: #b5b3b1;
+  font-size: 24rpx;
   flex: 80%;
 }
 .myQuestion .QuestionCard .bottom .eval {
+  font-size: 28rpx;
   text-align: center;
-  font-weight: 600;
-  background-color: #ffc222;
+  line-height: 58rpx;
+  width: 128rpx;
+  height: 58rpx;
+  border: 2rpx solid #2f88e5;
+  color: #2f88e5;
+  border-radius: 8rpx;
   flex: 20%;
 }

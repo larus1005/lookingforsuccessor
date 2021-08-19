@@ -1,24 +1,28 @@
-<!-- pages/myRelease/myRelease.wxml -->
-<view class="myCollection">
-    <navigator url="/pages/detail/detail">
-        <view class="collectionItem" bindlongpress="handleItemRemove" wx:for="{{content}}" wx:key="id" data-index="{{index}}">
-            <view class="top">
-                <view class="jobTitle">{{item.jobtitle}}</view>
-                <view class="isFull">{{item.isFull}}</view>
+<view class="">
+    <view class="tips" wx:if="{{isTipsShow}}">
+        <text class="iconfont icon-tishi"></text>
+        <view class="content">长按职位卡片取消收藏</view>
+        <text class="close iconfont icon-jia1" bind:tap="closeTips"></text>
+    </view>
+    <view wx:if="{{!save[0]}}" class="null_collection">
+        <image class="" src="../../pics/collection.png" mode="widthFix"></image>
+        <view>遇到感兴趣的职位记得收藏哟</view>
+    </view>
+    <view class="myCollection" wx:for="{{save}}" wx:key="_id">
+        <navigator url="/pages/detail/detail?pid={{item._id}}">
+            <view class="job" bindlongpress="handleItemRemove" data-value="{{item._id}}">
+                <view class="jobTitle">{{item.company}}-{{item.name}}</view>
+                <view class="jobDetail">
+                    {{item.location}}   |
+          {{item.type}}   |
+          {{item.create_time}}
+                </view>
+                <view class="jobTags">
+                    <view>{{item.tag1}}</view>
+                    <view>{{item.tag2}}</view>
+                    <view>{{item.tag3}}</view>
+                </view>
             </view>
-            <view class="jobDetail">
-                {{item.address}}|
-    {{item.day}}|
-    {{item.month}}|
-    {{item.fee}}
-            </view>
-            <view class="jobTags">
-                <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-                <view class="bagTitle">前辈锦囊</view>
-                <view class="bagContent">工作量和收获成正比的一份实习1111111111111111111111，</view>
-            </view>
-        </view>
-    </navigator>
+        </navigator>
+    </view>
 </view>

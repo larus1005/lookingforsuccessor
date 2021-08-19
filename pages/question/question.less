@@ -1,26 +1,19 @@
 /* pages/question/question.wxss */
-
+// 前辈信息
 .seniorCard {
     margin: 46rpx 50rpx 10rpx 50rpx;
     width: 100vw -10rpx;
     border-bottom: 2rpx solid rgb(47, 136, 229);
     padding-bottom: 24rpx;
-
     .senInfo {
         display: flex;
-
         .avatar {
             width: 100rpx;
             height: 100rpx;
             border-radius: 50%;
             margin-right: 50rpx;
         }
-
-        .sennickname {}
-
-
     }
-
     .senIntroduction {
         font-size: 28rpx;
         line-height: 54rpx;
@@ -38,7 +31,6 @@
         border-bottom: 24rpx;
         margin-top: 20rpx;
         
-
         .border {
             width: 8rpx;
             height: 38rpx;
@@ -47,37 +39,36 @@
         }
 
         .questionTitle {
-
             color: rgb(43, 40, 37);
             font-size: 28rpx;
             font-weight: 600;
         }
     }
 
-    .questionContent {
+    .questionFixed,.appenddQuestion {
         margin-top: 24rpx;
         .warp {
-            background-color: rgba(238, 239, 241);
+            background-color:rgb(238, 239, 241);
             height: 276rpx;
             width: auto;
             padding: 10rpx;
             color: rgb(170, 170, 170);
             font-size: 22rpx;
         }
+        textarea{
+            height: 240rpx;
+        }
+        .text_count{
+            float: right;
+            color: rgb(153,153,153);
+        }
     }
 
-    .appenddQuestion {
-        .title {
-            display: flex;
-
-            .delQuestionButton {
-                color: rgb(47, 136, 229);
-                font-size: 28rpx;
-                margin-left: auto;
-
-            }
-
-        }
+    .delQuestionButton {
+        float:right;
+        color: rgb(47, 136, 229);
+        font-size: 28rpx;
+        margin-right: 0;
     }
     .addQuestionButton {
         font-size: 28rpx;

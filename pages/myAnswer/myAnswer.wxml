@@ -1,2 +1,27 @@
-<!--pages/myAnswer/myAnswer.wxml-->
-<text>pages/myAnswer/myAnswer.wxml</text>
+<view class="myQuestion">
+    <view wx:if="{{!receive[0]}}" class="null_answer">
+        <image class="" src="../../pics/collection.png" mode="widthFix"></image>
+        <view>这里空空如也</view>
+    </view>
+    <view wx:for="{{receive}}" wx:key="id" wx:for-index="index">
+        <view class="QuestionCard" bind:tap="handleAnswer" data-index='{{index}}'>
+            <view class="jobTitle">
+                <navigator url="../detail/detail?pid={{item.pid}}">
+                    意向职位:{{item.positionDetail[0].company}}{{item.positionDetail[0].name}}
+                </navigator>
+                <text class="iconfont icon-arrow-right"></text>
+                <view class="status">
+                    <view class="questionStatusFinish" wx:if="{{item.status===1}}">已完成</view>
+                    <view class="questionStatusWaiting" wx:elif="{{item.status===2}}">待回答</view>
+                </view>
+            </view>
+            <view class="question">{{item.question}}</view>
+            <view class="bottom">
+                <view class="time">{{item.create_time}}</view>
+                <view wx:if="{{item.status===0}}">
+                    <view class="eval" wx:if="{{!item.isFinished}}">写答案</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

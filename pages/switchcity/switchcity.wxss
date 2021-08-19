@@ -1,4 +1,4 @@
-.searchLetter {
+/* .searchLetter {
   position: fixed;
   right: 0;
   width: 50rpx;
@@ -8,9 +8,9 @@
   flex-direction: column;
   color: #666;
   z-index: 1;
-}
+} */
 
-.searchLetter view {
+/* .searchLetter view {
   margin-top: 20rpx;
 }
 
@@ -35,9 +35,9 @@
   border-radius: 20rpx;
   font-size: 52rpx;
   z-index: 1;
-}
+} */
 
-.selection {
+/* .selection {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -63,7 +63,7 @@
   border-bottom: 1rpx solid #ededed;
   font-size: 24rpx;
   color: #666;
-}
+} */
 
 .hotcity-common {
   font-size: 24rpx;

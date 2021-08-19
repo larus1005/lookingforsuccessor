@@ -1,105 +1,67 @@
-var city = require('../../utils/city.js');
+// 全局变量
 var app = getApp()
 Page({
   data: {
-    currentCity:'',
-    searchLetter: [],
-    showLetter: "",
-    winHeight: 0,
-    // tHeight: 0,
-    // bHeight: 0,
+    citys: '',
     cityList: [],
-    isShowLetter: false,
-    scrollTop: 0,//置顶高度
-    scrollTopId: '',//置顶id
-    city: "全国",
-    hotcityList: [{ cityCode: 110000, city: '北京市' }, { cityCode: 310000, city: '上海市' }, { cityCode: 440100, city: '广州市' }, { cityCode: 440300, city: '深圳市' }, { cityCode: 330100, city: '杭州市' }, { cityCode: 320100, city: '南京市' }, { cityCode: 420100, city: '武汉市' }, { cityCode: 410100, city: '郑州市' }, { cityCode: 120000, city: '天津市' }, { cityCode: 610100, city: '西安市' }, { cityCode: 510100, city: '成都市' }, { cityCode: 500000, city: '重庆市' }]
+    currentCity:'',
   },
-  onLoad: function () {
-    // 生命周期函数--监听页面加载
-    var searchLetter = city.searchLetter;
-    var cityList = city.cityList();
-    var sysInfo = wx.getSystemInfoSync();
-    var winHeight = sysInfo.windowHeight;
-    var itemH = winHeight / searchLetter.length;
-    var tempObj = [];
-    for (var i = 0; i < searchLetter.length; i++) {
-      var temp = {};
-      temp.name = searchLetter[i];
-      temp.tHeight = i * itemH;
-      temp.bHeight = (i + 1) * itemH;
-      tempObj.push(temp)
-    }
-    this.setData({
-      winHeight: winHeight,
-      itemH: itemH,
-      searchLetter: tempObj,
-      cityList: cityList
-    })
-
-  },
-  onReady: function () {
-    // 生命周期函数--监听页面初次渲染完成
-
-
-  },
-  onShow: function () {
-    // 生命周期函数--监听页面显示
-
-
-  },
-  onHide: function () {
-    // 生命周期函数--监听页面隐藏
-    
-  },
-  onUnload: function () {
-    // 生命周期函数--监听页面卸载
-
-  },
-  onPullDownRefresh: function () {
-    // 页面相关事件处理函数--监听用户下拉动作
-
-  },
-  onReachBottom: function () {
-    // 页面上拉触底事件的处理函数
-
-  },
-  clickLetter: function (e) {
-    console.log(e.currentTarget.dataset.letter)
-    var showLetter = e.currentTarget.dataset.letter;
-    this.setData({
-      showLetter: showLetter,
-      isShowLetter: true,
-      scrollTopId: showLetter,
-    })
-    var that = this;
-    setTimeout(function () {
-      that.setData({
-        isShowLetter: false
+  // 获取城市列表云函数
+  getAllLocations() {
+    wx.cloud.callFunction({
+      name: 'getAllLocations',
+    }).then(res => {
+      const citys = res.result.data.list[0].locations || ''
+      const cityList = []
+      for (var i = 0; i < citys.length; i++) {
+        cityList.push({
+          id: i,
+          city: citys[i]
+        })
+      }
+      cityList.unshift({id:-1,city:'全国'})
+      wx.setStorageSync('cityList', cityList)
+      
+      this.setData({
+        citys,
+        cityList
       })
-    }, 1000)
+    }).catch(console.error)
   },
   //选择城市
-  bindCity: function (e) {
-    console.log("bindCity")
-    app.globalData.currentCity
-    this.setData({ 
-      city: e.currentTarget.dataset.city,
+  chooseCity: function (e) {
+    const currentCity = e.currentTarget.dataset.city
+    app.globalData.currentCity = currentCity
+    this.setData({
+      currentCity
     })
-    app.globalData.currentCity = this.data.city
-  },
-  //选择热门城市
-  bindHotCity: function (e) {
+    // 更改全局变量
     
-    this.setData({
-      city: e.currentTarget.dataset.city
+    wx.navigateBack({
+      delta: 1
     })
-    app.globalData.currentCity = this.data.city
   },
-  //点击热门城市回到顶部
-  hotCity: function () {
+  onLoad: function () {
+    const that = this
+    
+    wx.hideShareMenu({
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
+  },
+  onShow:function () {
+    const currentCity = app.globalData.currentCity
+    wx.getStorage({
+      key: 'cityList',
+      success:function(res) {
+        that.setData({
+          cityList:res.data || []
+        })
+      }
+    })
+    // 获取可选城市列表
+    this.getAllLocations()
     this.setData({
-      scrollTop: 0,
+      currentCity
     })
   }
 })

@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-around;
     position: fixed;
-    bottom: 0;
+    bottom: -40rpx;
     left: 0;
     z-index: 999;
     width: 100%;
@@ -60,4 +60,13 @@
 .special-text-wrapper{
   width: 56rpx;
   height: 56rpx;
+}
+.tab-bar-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FA5151;
+  position: absolute;
+  top:2px;
+  left:calc(100% - 50px);
 }

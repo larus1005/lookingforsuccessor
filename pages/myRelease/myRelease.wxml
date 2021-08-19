@@ -1,23 +1,24 @@
-<!-- pages/myRelease/myRelease.wxml -->
-<view class="myCollection">
-    <navigator url="/pages/detail/detail">
-        <view class="collectionItem" bindlongpress="handleItemRemove" wx:for="{{content}}" wx:key="id" data-index="{{index}}">
-            <view class="top">
-                <view class="jobTitle">{{item.jobtitle}}</view>
-                <view class="isFull">{{item.isFull}}</view>
+<view class="tips" wx:if="{{isTipsShow}}">
+    <text class="iconfont icon-tishi"></text>
+    <view class="content">长按职位卡片进行编辑/下线</view>
+    <text class="close iconfont icon-jia1" bind:tap="closeTips"></text>
+</view>
+<view class="myRelease" wx:for="{{post}}" wx:key="_id">
+    <navigator url="/pages/detail/detail?pid={{item._id}}">
+        <view class="job" bindlongpress="handleItem" data-index="{{index}}">
+            <view class="jobTitle">
+                {{item.company}}-{{item.name}}
+                <view class="online" wx:if="{{item.is_deleted}}">已下线</view>
             </view>
             <view class="jobDetail">
-                {{item.address}}|
-    {{item.day}}|
-    {{item.month}}|
-    {{item.fee}}
+                {{item.location}}  |
+          {{item.type}}  |
+          {{item.create_time}}
             </view>
             <view class="jobTags">
-                <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-                <view class="bagTitle">前辈锦囊</view>
-                <view class="bagContent">工作量和收获成正比的一份实习1111111111111111111111，</view>
+                <view>{{item.tag1}}</view>
+                <view>{{item.tag2}}</view>
+                <view>{{item.tag3}}</view>
             </view>
         </view>
     </navigator>

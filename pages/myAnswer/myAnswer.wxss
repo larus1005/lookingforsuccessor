@@ -1,1 +1,73 @@
 /* pages/myAnswer/myAnswer.wxss */
+.myQuestion .null_answer {
+  margin-top: 75rpx;
+}
+.myQuestion .null_answer image {
+  width: 300rpx;
+  display: block;
+  margin: auto;
+}
+.myQuestion .null_answer view {
+  font-size: 28rpx;
+  color: #5c5a58;
+  width: 100%;
+  text-align: center;
+}
+.myQuestion .QuestionCard {
+  width: calc(100vw - 100rpx);
+  border-bottom: 2rpx solid #ececec;
+  margin: 0 auto 33rpx;
+}
+.myQuestion .QuestionCard .jobTitle {
+  font-size: 28rpx;
+  display: flex;
+  margin: 20rpx 0;
+  font-weight: 500rpx;
+  align-items: center;
+}
+.myQuestion .QuestionCard .jobTitle .titleContent {
+  font-weight: normal;
+}
+.myQuestion .QuestionCard .jobTitle text {
+  font-size: 20rpx;
+  color: #b5b3b1;
+}
+.myQuestion .QuestionCard .jobTitle .status {
+  text-align: center;
+  margin-left: auto;
+}
+.myQuestion .QuestionCard .jobTitle .status .questionStatusFinish {
+  color: #b5b3b1;
+}
+.myQuestion .QuestionCard .jobTitle .status .questionStatusWaiting {
+  color: #2f88e5;
+}
+.myQuestion .QuestionCard .jobTitle .status .questionStatusRefund {
+  color: #2f88e5;
+}
+.myQuestion .QuestionCard .question {
+  font-size: 28rpx;
+  color: #5c5a58;
+  line-height: 58rpx;
+}
+.myQuestion .QuestionCard .bottom {
+  margin-bottom: 36rpx;
+  display: flex;
+}
+.myQuestion .QuestionCard .bottom .time {
+  margin-top: 22rpx;
+  color: #b5b3b1;
+  font-size: 24rpx;
+  flex: 80%;
+}
+.myQuestion .QuestionCard .bottom .eval {
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 58rpx;
+  width: 128rpx;
+  height: 58rpx;
+  border: 2rpx solid #2f88e5;
+  color: #2f88e5;
+  border-radius: 8rpx;
+  flex: 20%;
+}

@@ -1,44 +1,50 @@
 <view class="question">
     <view class="seniorCard">
         <view class="senInfo">
-            <image class="avatar" src='../../pics/1.jpg' />
+            <image class="avatar" src='{{position.user[0].avatarUrl}}'></image>
             <view class="sennickname">
-                <view class="nickname">{昵称}</view>
-                <view>{1}天前来过</view>
+                <view class="nickname">{{position.user[0].nickname}}</view>
+                <view wx:if="{{days>=0}}">{{days}}天前来过</view>
+                <view wx:else>今天来过</view>
             </view>
         </view>
         <view class="senIntroduction">
-            Hi，我是{昵称}，
-            <text class="position">{岗位}</text>
+            Hi，我是{{position.user[0].nickname}}，
+            <text class="position">{{position.company}}{{position.name}}</text>
             岗位的前任实习同学， 关于岗位的任何问题欢迎向我提问哟！
         </view>
     </view>
     <view class="questionCard">
-        <view class="title">
-            <view class="border"></view>
+        <view class="questionFixed">
             <view class="questionTitle">问题1</view>
-        </view>
-        <view class="questionContent">
-            <textarea placeholder="请简要描述你的问题（100字以内)" maxlength="100" class="warp" cols="40" bindinput=""></textarea>
+            <view class="warp">
+                <textarea placeholder="请简要描述你的问题（100字以内)" maxlength="99" cols="40" bindinput="handleFixQuesrtionContent"></textarea>
+                 <view class="text_count">
+                     {{fixqLen}}/{{questionLen}}
+               </view>
+            </view>
         </view>
         <view class="appenddQuestion" wx:for="{{appendQuestionList}}" wx:key="key">
-            <view class="title">
-                <view class="border"></view>
-                <view class="questionTitle">问题{{index+2}}</view>
-                <view class="delQuestionButton" bind:tap="handleREmoveQuestion" data-index="{{index}}">
-                    删除
-                </view>
+            <view class="questionTitle">问题{{index+2}}</view>
+            <view class="warp"> 
+               <textarea placeholder="请简要描述你的问题（100字以内)" maxlength="100"  cols="40" bindinput="handleAddquesrtionContent" data-index="{{index}}"></textarea> 
+              <view class="text_count">
+                  {{appendQuestionList[index].addqLen}}/{{questionLen}}
+               </view>  
             </view>
-            <view class="questionContent">
-                <textarea placeholder="请简要描述你的问题（100字以内)" maxlength="100" class="warp" cols="40" bindinput="handleAddquesrtionContent" data-index="{{index}}"></textarea>
+              
+            
+            <view class="delQuestionButton" bind:tap="handleRemoveQuestion" data-index="{{index}}">
+                删除
             </view>
         </view>
-        <view class="addQuestionButton" bindtap="handleAddQuestion">追加问题+</view>
-    </view>
-    <view class="payCard">
-        <view class="totalPrice">总价：{{totalqnum*1.99}}元</view>
-        <view class="payButton" bindtap="handlePay">提问并支付</view>
-        <view class="tip">支付成功后会短信通知实习前辈，72小时内未收到回答则全额退款</view>
-
+        <view class="addQuestionButton" bindtap="handleAddQuestion" wx:if="{{totalqnum<3}}">
+            +追加问题
+        </view>
+        <view class="payCard">
+            <view class="totalPrice">总价：{{totalqnum*5}}元</view>
+            <view class="payButton" bindtap="submitQuestion">提问并支付</view>
+            <view class="tip">支付成功后会短信通知实习前辈，72小时内未收到回答则全额退款</view>
+        </view>
     </view>
 </view>

@@ -1,66 +1,142 @@
-/* *index.wxss*
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@font-face {
+  font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_2302707_aehnj64agce.eot?t=1618319493592');
+  /* IE9 */
+  src: url('//at.alicdn.com/t/font_2302707_aehnj64agce.eot?t=1618319493592#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'), url('//at.alicdn.com/t/font_2302707_aehnj64agce.woff?t=1618319493592') format('woff'), url('//at.alicdn.com/t/font_2302707_aehnj64agce.ttf?t=1618319493592') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('//at.alicdn.com/t/font_2302707_aehnj64agce.svg?t=1618319493592#iconfont') format('svg');
+  /* iOS 4.1- */
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.icon-wenhao:before {
+  content: "\e667";
 }
-
-.usermotto {
-  margin-top: 200px;
-} */
+.icon-reset:before {
+  content: "\e7c0";
+}
+.icon-lower-triangle:before {
+  content: "\e608";
+}
+.icon-jia1:before {
+  content: "\e606";
+}
+.icon-tishi:before {
+  content: "\e6e2";
+}
+.icon-arrow-right:before {
+  content: "\e605";
+}
+.icon-down:before {
+  content: "\e604";
+}
+.icon-ArtboardCopy:before {
+  content: "\e603";
+}
+.icon-search:before {
+  content: "\e607";
+}
+.icon-weizhi:before {
+  content: "\e60f";
+}
+.icon-xin:before {
+  content: "\e629";
+}
+.icon-xin1:before {
+  content: "\e602";
+}
+.icon-wenjianbao:before {
+  content: "\e687";
+}
+.icon-Generalcalendar1-24px:before {
+  content: "\e9ca";
+}
+.icon-duihua:before {
+  content: "\e62e";
+}
+.icon-wenjianjia:before {
+  content: "\e650";
+}
+.icon-xin2-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy:before {
+  content: "\e601";
+}
+.icon--search:before {
+  content: "\e600";
+}
+.icon-xiangxiajiantou:before {
+  content: "\e616";
+}
 .shixiquan {
   padding-bottom: 200rpx;
 }
 .searchBox {
   display: flex;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
-  padding: 10rpx;
+  padding: 10rpx 56rpx 34rpx 48rpx;
   background: linear-gradient(#2f88e5, #4eb7f3);
 }
 .searchBox .chooseCity {
   height: 78rpx;
-  flex: 2;
+  width: 120rpx;
   color: #fff;
   font-size: 28rpx;
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   line-height: 78rpx;
   overflow: hidden;
+  margin-right: 20rpx;
 }
-.searchBox text {
+.searchBox .chooseCity text {
   color: #fff;
   font-size: 28rpx;
 }
-.searchBox searchInput {
-  flex: 8;
+.searchBox .search {
   background-color: #fff;
-  border-radius: 38rpx;
+  border-radius: 78rpx;
+  display: flex;
+  align-items: center;
+  width: 544rpx;
   height: 78rpx;
-  margin: 10rpx;
 }
-.searchBox .cancel {
-  flex: 1;
+.searchBox .search input {
+  font-size: 28rpx;
+}
+.searchBox .search image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 28rpx;
+  margin-right: 14rpx;
+}
+.searchBox .search .phcolor {
+  color: rgba(192, 192, 192);
+}
+.searchBox .search .reset {
+  text-align: center;
   color: #fff;
 }
-.searchBox .cancel image {
+.searchBox .search .reset text {
+  font-size: 50rpx;
+}
+.searchBox .reset {
   width: 50rpx;
   height: 50rpx;
+  text-align: center;
+  color: #fff;
+  margin-left: 20rpx;
+}
+.searchBox .reset text {
+  font-size: 50rpx;
+}
+.get_userinfo_btn {
+  background: linear-gradient(#2f88e5, #4eb7f3);
+  height: 118rpx;
 }
 .swiper {
   transform: translateY(0);
-  border-radius: 32rpx;
   overflow: hidden;
 }
 .swiper swiper {
@@ -68,28 +144,39 @@
   height: 236rpx;
   transform: translateY(0);
   margin: 44rpx auto 34rpx;
-  border-radius: 32rpx;
   overflow: hidden;
 }
 .swiper swiper swiper-item {
-  border-radius: 32rpx;
   overflow: hidden;
 }
 .swiper swiper swiper-item image {
   width: 100%;
 }
+tabs .loading .pimage {
+  display: block;
+  width: 50%;
+  margin: 75rpx auto;
+}
+tabs .loading .ptext {
+  color: #5c5a58;
+  text-align: center;
+}
 tabs .job {
   border-bottom: 4rpx solid rgba(92, 90, 88, 0.1);
-  padding-left: 50rpx;
-  padding-right: 50rpx;
+  padding: 23rpx 50rpx;
 }
 tabs .job .jobTitle {
   font-size: 34rpx;
   margin-bottom: 10rpx;
+  font-weight: 500;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 tabs .job .jobDetail {
   margin-bottom: 20rpx;
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #5c5a58;
 }
 tabs .job .jobTags {

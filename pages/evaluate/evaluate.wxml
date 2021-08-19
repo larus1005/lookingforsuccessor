@@ -1,0 +1,10 @@
+<view class="evaluate_wrap">
+    <view class="evaluate_title">
+        请对Ta的回答进行评价或表示感谢吧
+    </view>
+    <view class="evaluate_content"> 
+        <textarea placeholder="答主超级nice 感谢分享"></textarea>
+    </view>
+    <view class="submit_button" bind:tap="submit">提  交</view>
+</view>
+  

@@ -4,90 +4,64 @@
 </view>
 <view class="input_wrap">
     <text>企业名称</text>
-    <input bindinput="handleEnterprise" bindblur="handleCheckEnterprise" type="text" placeholder="请输入企业名称，例如：腾讯" value="{{enterprise}}"/>
+    <input type="text" placeholder="请输入企业名称，例如：腾讯" value="{{position.company}}" placeholder-class="placeholder {{!checkItem.isCompany?'nullCompany':''}}" bindinput="companyInput" />
 </view>
 <view class="input_wrap">
     <text>岗位名称</text>
-    <input bindinput="jobName" type="text" placeholder="例如：微信产品策划" />
+    <input type="text" placeholder="例如：微信产品策划" value="{{position.name}}" placeholder-class="placeholder {{!checkItem.isName?'nullName':''}}" bindinput="nameInput" />
 </view>
-<!-- <view class="select_wrap">
-    <text>职位类型</text>
-    <view class="select_wrap">
-        <view class="select_box" catch:tap="selectTap">
-            <view class="select">
-                <text>请选择职位类型</text>
-                <text class="" selectable="false" space="false" decode="false"></text>
-            </view>
-            <view class="option_box" catch:tap="optionTaps">
-                <!-- 需要获取职位类型哦 -->
-<!-- <view class="option" wx:for="{{selectData}} " wx:key="id" data-index="{{index}}">{{item.type}}</view> -->
-<!-- <view wx:for="{{ selectData}}" wx:key="id" data-index="{{index}}">
-                    {{item.type}}
-                </view>
-            </view>
-        </view>
-    </view>
-</view> -->
 <view class='select_wrap'>
     <text>职位类型</text>
-    <!-- 下拉框 -->
-    <view class='select_box'>
-        <view class='select' catchtap='selectTaps'>
-           
-            <text class='select_text'>{{selectDatas[indexs]}}</text>
-             <text class="iconfont icon-down">  
-            </text>
-        </view>
-        <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
-            <view class="option" wx:for="{{selectDatas}}" wx:key='this' data-index="{{index}}" catchtap='optionTaps'>
-                {{item}}
-            </view>
-        </view>
+    <view class="choosetype {{!checkItem.isType?'nullType':''}}">
+        <view bind:tap="typeInput">{{position.type}}</view>
+        <text class="iconfont icon-lower-triangle"></text>
     </view>
 </view>
 <view class="input_wrap">
     <text>工作地点</text>
-    <input bindinput="handleAdderess" type="text" placeholder="例如：上海市" />
-    <!-- <view class="select_box">
-        <text>请选择工作地点</text>
+    <view class="placeholder {{!checkItem.isLocation?'nullLocation':''}}" bind:tap="locationInput">
+        {{position.location}}
     </view>
-    <view class="option_box">
-        <text class="option"></text>
-    </view> -->
 </view>
 <view class="input_wrap">
     <text>投递邮箱</text>
-    <input bindinput="handleMail" type="text" placeholder="仅限填写企业邮箱哟" />
+    <input value="{{position.email}}" placeholder-class="placeholder {{!checkItem.isMail?'nullMail':''}}" bindinput="emailInput" type="text" placeholder="仅限填写企业邮箱哟" />
 </view>
 <view class="textarea_wrap">
     <text>职位描述</text>
-    <textarea placeholder="请简要描述该岗位工作职责、能力要求、薪资福利、到岗时间等信息" class="wrap"></textarea>
+    <textarea placeholder="请简要描述该岗位工作职责、能力要求、薪资福利、到岗时间等信息" value="{{position.detail}}" placeholder-class="textarea-placeholder {{!checkItem.isDetail?'nullDetail':''}}" class="wrap" maxlength="1000" bindinput="detailInput"></textarea>
 </view>
 <view class="Title">
     <view></view>
     <text>前辈锦囊</text>
 </view>
 <view class="choose_wrap">
-    <text>加班情况</text>
-    <view wx:for="{{overtimetags}}" wx:key="id" bind:tap="handleovertimetags" data-index="{{index}}" class="{{item.isSelect?'select':'nonselect'}}">
-        {{item.name}}
+    <view class="choose_tag_wrap">
+        <text >加班情况</text>
+        <view wx:for="{{overtimetags}}" wx:key="id" bind:tap="handleovertimetags" data-index="{{index}}" class="{{item.isSelect?'select':'nonselect'}} {{!checkItem.istag1?'nullOvertime':''}}">
+            {{item.name}}
+        </view>
     </view>
-</view>
-<view class="choose_wrap">
-    <text>工作难度</text>
-    <view wx:for="{{ difficultytags}}" wx:key="id" bind:tap="handledifficultytags" data-index="{{index}}" class="{{item.isSelect?'select':'nonselect'}}">
-        {{item.name}}
+    <view class="choose_tag_wrap">
+        <text>工作难度</text>
+        <view wx:for="{{ difficultytags}}" wx:key="id" bind:tap="handledifficultytags" data-index="{{index}}" class="{{item.isSelect?'select':'nonselect'}} {{!checkItem.istag2?'nullDifficulty':''}}">
+            {{item.name}}
+        </view>
     </view>
-</view>
-<view class="choose_wrap">
-    <text>整体收获</text>
-    <view wx:for="{{harvesttags}}" wx:key="id" bind:tap="handleharvesttags" data-index="{{index}}" class="{{item.isSelect?'select':'nonselect'}}">
-        {{item.name}}
+    <view class="choose_tag_wrap">
+        <text>整体收获</text>
+        <view wx:for="{{harvesttags}}" wx:key="id" bind:tap="handleharvesttags" data-index="{{index}}" class="{{item.isSelect?'select':'nonselect'}} {{!checkItem.istag3?'nullHarvest':''}}">
+            {{item.name}}
+        </view>
     </view>
 </view>
 <view class="textarea_wrap">
     <text>相关建议</text>
-    <textarea placeholder="快快给继任同学留下一些小Tips吧，可以是面试建议、工作复盘等。认真填写的前辈锦囊更能吸引继任同学的付费咨询哟！"></textarea>
+    <textarea value="{{position.tip}}" placeholder="快快给继任同学留下一些小Tips吧，可以是面试建议、工作复盘等。认真填写的前辈锦囊更能吸引继任同学的付费咨询哟！" maxlength="1000" bindinput="tipInput" placeholder-class="{{!checkItem.isTip?'nullTip':''}}">
+    </textarea>
+    <view class="text_count isCount">
+        {{tipNowLen}}/{{tipMaxLen}}
+    </view>  
 </view>
 <view class="submit" bindtap="Submit">提 交</view>
 <view class="tip">提交遇到问题，请联系小助手wechat：WZLan9767</view>

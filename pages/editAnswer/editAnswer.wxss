@@ -1,0 +1,52 @@
+.editAnswer {
+  width: calc(100vw - 100rpx);
+  margin: 0 auto;
+}
+.editAnswer .QuestionCard {
+  border-bottom: 2rpx solid #ececec;
+  margin: 0 auto 33rpx;
+}
+.editAnswer .QuestionCard .jobTitle {
+  font-size: 28rpx;
+  margin: 20rpx 0;
+  font-weight: 500rpx;
+}
+.editAnswer .QuestionCard .question {
+  font-size: 28rpx;
+  color: #5c5a58;
+  line-height: 58rpx;
+}
+.editAnswer .QuestionCard .bottom {
+  margin-bottom: 36rpx;
+  display: flex;
+  color: #b5b3b1;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 50rpx;
+  margin: 20rpx 0 18rpx;
+  font-size: 24rpx;
+}
+.editAnswer .editAnswer_wrap .title {
+  font-size: 28rpx;
+  color: #2b2825;
+  margin: 44rpx 0 22rpx;
+}
+.editAnswer .editAnswer_wrap textarea {
+  padding: 30rpx;
+  color: #5c5a58;
+  border-radius: 16rpx;
+  background-color: #eeeff1;
+}
+.editAnswer .submit_button {
+  width: calc(100vw - 100rpx);
+  height: 88rpx;
+  font-size: 32rpx;
+  font-weight: 300;
+  text-align: center;
+  background-color: #2f88e5;
+  line-height: 88rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  position: fixed;
+  bottom: 40rpx;
+}

@@ -11,6 +11,7 @@ Component({
         "backgroundColor": "#ffffff",
         "color": "#979795",
         "selectedColor": "#1c1c1b",
+        "redDot":"false",
         "list": [
           {
             "pagePath": "/pages/index/index",
@@ -30,16 +31,18 @@ Component({
             "selectedIconPath": "icon/icon_mine_HL.png",
             "text": "我的"
           }
-        ]
+        ],
       }
-    }
+    },
+    
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    isIphoneX: app.globalData.systemInfo.model.includes('iPhone X') != -1 ? true : false
+    isIphoneX: app.globalData.systemInfo.model.includes('iPhone X') != -1 ? true : false,
+    
   },
 
   /**

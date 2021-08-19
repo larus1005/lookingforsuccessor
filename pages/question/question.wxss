@@ -41,24 +41,33 @@
   font-size: 28rpx;
   font-weight: 600;
 }
-.questionCard .questionContent {
+.questionCard .questionFixed,
+.questionCard .appenddQuestion {
   margin-top: 24rpx;
 }
-.questionCard .questionContent .warp {
-  background-color: rgba(238, 239, 241);
+.questionCard .questionFixed .warp,
+.questionCard .appenddQuestion .warp {
+  background-color: #eeeff1;
   height: 276rpx;
   width: auto;
   padding: 10rpx;
   color: #aaaaaa;
   font-size: 22rpx;
 }
-.questionCard .appenddQuestion .title {
-  display: flex;
+.questionCard .questionFixed textarea,
+.questionCard .appenddQuestion textarea {
+  height: 240rpx;
 }
-.questionCard .appenddQuestion .title .delQuestionButton {
+.questionCard .questionFixed .text_count,
+.questionCard .appenddQuestion .text_count {
+  float: right;
+  color: #999999;
+}
+.questionCard .delQuestionButton {
+  float: right;
   color: #2f88e5;
   font-size: 28rpx;
-  margin-left: auto;
+  margin-right: 0;
 }
 .questionCard .addQuestionButton {
   font-size: 28rpx;

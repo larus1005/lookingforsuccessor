@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "searchInput":"../../components/searchInput/searchInput",
     "tabs": "../../components/tabs/tabs",
     "tabbar": "../../tabbarComponent/tabbar" 
    

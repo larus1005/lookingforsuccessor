@@ -1,58 +1,102 @@
-/* pages/myCollection/myCollection.wxss */
-/* pages/myRelease/myRelease.wxss */
-.collectionItem {
-    background-color: #fff;
-    width: ~'calc( 100vw - 40rpx )';
-    margin: 20rpx auto;
-
-    .top {
+view {
+    .tips {
+        padding: 0 50rpx;
         display: flex;
-        margin-bottom: 10rpx;
+        align-items: center;
+        background-color: rgb(230, 247, 255);
+        color: rgb(37, 136, 229);
+        font-size: 28rpx;
+        height: 64rpx;
+        border: 2rpx solid rgb(146, 213, 255);
 
-        .jobTitle {
-            flex: 80%;
+        .content {
+            margin-left: 30rpx;
         }
 
-        .isFull {
-            flex: 20%;
-        }
-    }
-
-    .jobDetail {
-        margin-bottom: 20rpx;
-    }
-
-    .jobTags {
-        display: flex;
-        margin-bottom: 10rpx;
-
-        view {
-            border: 2rpx dotted #ffc222;
-
-            margin-left: 10rpx;
-
+        .close {
+            color: rgb(92, 90, 88);
+            margin-left: auto;
         }
     }
 
-    .silkbag {
-        margin-left: 10rpx;
-        display: flex;
+    .null_collection {
+        margin-top: 75rpx;
+        image {
+            width: 300rpx;
+            display: block;
+            margin: auto;
+        }
 
-        .bagTitle {
-            background-color: #ffc222;
-            color: #fff;
-            flex: 20%;
+        view{
+            font-size: 28rpx;
+            color: rgb(92, 90, 88);
+            width: 100%;
             text-align: center;
-
         }
+    }
 
-        .bagContent {
-            margin-left: 10rpx;
-            flex: 80%;
-            display: -webkit-box;
-            overflow: hidden;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
+    .myCollection {
+
+        .job {
+            border-bottom: 4rpx solid rgba(92, 90, 88, 0.1);
+            padding: 23rpx 50rpx;
+
+            .jobTitle {
+                font-size: 34rpx;
+                margin-bottom: 10rpx;
+            }
+
+
+
+
+            .jobDetail {
+                margin-bottom: 20rpx;
+                font-size: 24rpx;
+                color: rgb(92, 90, 88);
+            }
+
+            .jobTags {
+                display: flex;
+                margin-bottom: 24rpx;
+
+                view {
+                    width: 116rpx;
+                    height: 44rpx;
+                    border-radius: 12rpx;
+                    font-size: 22rpx;
+                    color: #fff;
+                    line-height: 44rpx;
+                    text-align: center;
+                    background-color: rgb(169, 197, 227);
+                    margin-right: 28rpx;
+                }
+            }
+
+            .silkbag {
+                display: flex;
+                align-items: center;
+                height: 52rpx;
+
+                .portrait {
+                    image {
+                        width: 52rpx;
+                        height: 52rpx;
+                        border-radius: 50%;
+                    }
+                }
+
+                .bagContent {
+                    margin-left: 20rpx;
+                    color: rgb(92, 90, 88);
+                    font-size: 24rpx;
+                    height: 34rpx;
+                    line-height: 34rpx;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                }
+            }
         }
     }
 }

@@ -6,11 +6,9 @@
             <text class="iconfont icon-weizhi"></text>
             <view>{{position.location}}</view>
             <text class="iconfont icon-wenjianbao"></text>
-            <!-- type不对 -->
-            <view>开发</view>
-             <text class="iconfont icon-Generalcalendar1-24px"></text>
-             <!-- 没有发布时间字段 -->
-            <view>1.23</view>
+            <view>{{position.type}}</view>
+            <text class="iconfont icon-Generalcalendar1-24px"></text>
+            <view>{{position.create_time}}</view>
         </view>
     </view>
     <!-- 职位详细内容 -->
@@ -22,9 +20,7 @@
         </view>
         <view class="duty_wrap">
             <view class="subTitle">岗位职责:</view>
-            <view class="duty">
-              {{position.obligation}} 
-            </view>
+            <view class="duty">{{position.detail}}</view>
         </view>
         <view class="mail_wrap">
             <view class="subTitle">投递邮箱</view>
@@ -36,30 +32,30 @@
             <text>前辈锦囊</text>
         </view>
         <view class="seniorinfo_wrap">
-            <image class="" src="{{user.avatarUrl}}" mode="widthFix"></image>
+            <image class="" src="{{position.user[0].avatarUrl}}" mode="widthFix"></image>
             <view class="seniorinfo">
-                <view class="seniorName">{{user.nickname}}</view>
-                <view class="lastLogin">{{lastLogin}}天前来过</view>
+                <view class="seniorName">{{position.user[0].nickname}}</view>
+                <view class="lastLogin">{{days}}天前来过</view>
             </view>
         </view>
         <!-- 这份实习 -->
         <view class="jobTags_wrap">
             <view>这份实习</view>
-            <view class="jobTags" wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
+            <view class="jobTags">{{position.tag1}}</view>
+            <view class="jobTags">{{position.tag2}}</view>
+            <view class="jobTags">{{position.tag3}}</view>
         </view>
         <view class="silkbag">
             <view>“</view>
-            <view class="bagContent">
-                {{position.tip}}
-            </view>
-            <view class="quotationmark">”</view>
+            <view class="bagContent">{{position.tip}}”</view>
+            
         </view>
         <view class="tip_wrap">
-            想要获取更多信息可以通过下方<text>咨询前辈</text>向我提问哟！
+            想要获取更多信息可以通过下方
+            <text>咨询前辈</text>
+            向我提问哟！
         </view>
-          
     </view>
-
     <!-- 底部按钮 -->
     <view class="btnBottom">
         <view class="share_wrap">
@@ -68,21 +64,20 @@
                 <view>分享</view>
                 <button open-type="share">1</button>
             </view>
-            <!-- <button open-type="share"></button> -->
         </view>
         <view class="collect_wrap" bind:tap="handleCollect">
-            <view class="uncollected" wx:if="{{!saved}}">
-                <text class="iconfont icon-xin2-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy"></text>
-                <view>收藏</view>
-
-            </view>
-            <view class="collected" wx:else>
+         <view class="collected"  wx:if="{{saved}}">
                 <text class="iconfont icon-xin2-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy"></text>
                 <view>已收藏</view>
             </view>
+            <view class="uncollected" wx:else>
+                <text class="iconfont icon-xin2-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy"></text>
+                <view>收藏</view>
+            </view>
+           
         </view>
         <view class="question">
-            <navigator url="/pages/question/question">咨询前辈(1.99元/问)</navigator>
+            <view bind:tap="handleAsk">咨询前辈(5元/问)</view>
         </view>
     </view>
 </view>

@@ -1,0 +1,88 @@
+/* pages/myAnswer/myAnswer.wxss */
+.myQuestion {
+    .null_answer {
+        margin-top: 75rpx;
+        image {
+            width: 300rpx;
+            display: block;
+            margin: auto;
+        }
+
+        view{
+            font-size: 28rpx;
+            color: rgb(92, 90, 88);
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .QuestionCard {
+        width: calc(100vw - 100rpx);
+        border-bottom: 2rpx solid #ececec;
+        margin: 0 auto 33rpx;
+
+        .jobTitle {
+            font-size: 28rpx;
+            display: flex;
+            margin: 20rpx 0;
+            font-weight: 500rpx;
+            align-items: center;
+            .titleContent {
+                font-weight: normal;
+            }
+
+            text {
+                font-size: 20rpx;
+                color: rgb(181, 179, 177);
+            }
+            
+            .status {
+                text-align: center;
+                margin-left: auto;
+
+                .questionStatusFinish {
+                    color: rgb(181, 179, 177);
+                    
+                }
+
+                .questionStatusWaiting {
+                    color: rgb(47, 136, 229);
+                }
+
+                .questionStatusRefund {
+                    color: rgb(47, 136, 229);
+                }
+            }
+        }
+
+        .question {
+            font-size: 28rpx;
+            color: rgb(92, 90, 88);
+            line-height: 58rpx;
+        }
+
+        .bottom {
+            margin-bottom: 36rpx;
+            display: flex;
+
+            .time {
+                margin-top: 22rpx;
+                color: rgb(181, 179, 177);
+                font-size: 24rpx;
+                flex: 80%;
+
+            }
+
+            .eval {
+                font-size: 28rpx;
+                text-align: center;
+                line-height: 58rpx;
+                width: 128rpx;
+                height: 58rpx;
+                border: 2rpx solid rgb(47, 136, 229);
+                color: rgb(47, 136, 229);
+                border-radius: 8rpx;
+                flex: 20%;
+            }
+        }
+    }
+}

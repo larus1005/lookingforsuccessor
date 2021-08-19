@@ -3,10 +3,9 @@
     <view class="user_info_wrap">
         <view class="user_img_wrap">
             <view class="user_info">
-                <image class="" src="../../pics/1.jpg"></image>
-            <view class="username">王了了</view>
+                <image class="" src="{{userInfo.avatarUrl}}"></image>
+                <view class="username">{{userInfo.nickName}}</view>
             </view>
-            
         </view>
     </view>
     <view class="personal">
@@ -23,12 +22,7 @@
                     <text class="iconfont icon-arrow-right"></text>
                 </navigator>
             </view>
-            <view class="myProfit">
-                <navigator url="/pages/myProfit/myProfit">
-                    <view class="">我的收益</view>
-                    <text class="iconfont icon-arrow-right"></text>
-                </navigator>
-            </view>
+           
         </view>
     </view>
     <view class="information">
@@ -41,11 +35,27 @@
             </view>
             <view class="myAnswer">
                 <navigator url="/pages/myAnswer/myAnswer">
-                    <view class="">收到的提问</view>
+                    <view class="">收到的提问<text class="iconfont icon-hongdianx" wx:if="{{reddot}}"></text></view>
+                    
                     <text class="iconfont icon-arrow-right"></text>
                 </navigator>
             </view>
+            
         </view>
     </view>
+    <view class="myUtils">
+         <view class="myProfit">
+                <navigator url="/pages/myProfit/myProfit">
+                    <view class="">我的收益</view>
+                    <text class="iconfont icon-arrow-right"></text>
+                </navigator>
+            </view>
+            <view class="contact">
+                <view class="">联系小助手</view>
+                <text class="iconfont icon-arrow-right"></text>
+                <button open-type="contact">1</button>
+            </view>
+    </view>
+      
     <tabbar tabbar="{{tabbar}}"></tabbar>
 </view>

@@ -5,13 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
+    profit:'99.00',
+    cashOut:'66.00',
+    userInfo:{}
 
   },
+   getUserInfo(e){
+    wx.cloud.callFunction({
+      name: 'getUserInfo',
+    }).then(res => {
+      console.log(res.result.data.data)
+      this.setData({
+        userInfo: res.result.data.data[0]
+      })
+    }).catch(console.error)
+   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getUserInfo()
+    wx.hideShareMenu({
+      complete: (res) => {},
+    })
 
   },
 

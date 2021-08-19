@@ -5,60 +5,81 @@ Page({
    * 页面的初始数据
    */
   data: {
-    content:[
-      {
-        id:'0',
-        jobtitle:'腾讯-产品实习生（内容中台）',
-        isFull:'转正机会',
-        address:'深圳',
-        day:'>4天/周',
-        month:'>6个月',
-        fee:'120-150/天'
+    tags: [{
+        id: 0,
+        name: "加班适中",
       },
       {
-        id:'1',
-        jobtitle:'美团-运营实习生（美团美妆）',
-        isFull:'',
-        address:'上海',
-        day:'>4天/周',
-        month:'>3个月',
-        fee:'120-150/天'
+        id: 1,
+        name: "挑战性强",
+      },
+      {
+        id: 2,
+        name: "收获多多",
       }
     ],
-    tags:[
-      {
-        id:0,
-        name:"加班适中",
-      },
-      {
-        id:1,
-        name:"挑战性强",
-      },
-      {
-        id:2,
-        name:"收获多多",
-      }
-    ]
+    isTipsShow: true,
+    save: []
   },
-  handleItemRemove(e){
-    const that =this
-    const {index} = e.currentTarget.dataset;
-    const content =this.data.content;
+  //云函数-获取我收藏的职位
+  getSavedPositions (e) {
+   
+    wx.cloud.callFunction({
+      name: 'getSavedPosition',
+    }).then(res => {
+      const save = res.result.data.list[0].positions
+      save.map((v, i) => {
+        let reg = /(\d{4})-(\d{2})-(\d{2})/
+        v.create_time.match(reg)
+        v.create_time = RegExp.$2 + '-' + RegExp.$3
+      })
+      this.setData({
+        save
+      })
+    }).catch(console.error)
+  },
+  // 云函数-取消收藏
+  cancle (pid) {
+    wx.cloud.callFunction({
+      name: 'cancledSave',
+      data: {
+        pid
+      },
+    }).then(res => {
+      wx.showModal({
+        title: '成功',
+        content: '取消成功',
+        mask: true,
+        showCancel: false
+      })
+    }).catch(console.error)
+  },
+  // 取消收藏
+  handleItemRemove (e) {
+    const pid = e.currentTarget.dataset.value
+    const that = this
     wx.showActionSheet({
-      itemList: ['确认删除？'],
+      itemList: ['取消收藏？'],
       success: function (e) {
-        content.splice(index,1)
-        that.setData({
-          content
-        })
+        that.cancle(pid)
+        that.getSavedPositions()
       }
-    })   
+    })
+  },
+  // 关闭提示框
+  closeTips () {
+    const isTipsShow = !this.data.isTipsShow
+    this.setData({
+      isTipsShow
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.hideShareMenu({
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
   },
 
   /**
@@ -72,7 +93,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getSavedPositions()
   },
 
   /**

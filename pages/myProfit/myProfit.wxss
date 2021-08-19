@@ -1,31 +1,45 @@
 /* pages/myProfit/myProfit.wxss */
 .myProfit .profit {
   height: 200rpx;
-  width: calc( 100vw - 80rpx );
-  margin: 20rpx auto;
-  background-color: #ccc;
-  display: flex;
-  align-items: center;
-  padding-left: 30rpx;
+  background-image: url(https://z3.ax1x.com/2021/04/13/cyn6c6.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  padding: 14rpx 0 0 50rpx;
+  color: rgba(255, 255, 255, 0.62);
 }
-.myProfit .profit .amount .money {
-  font-size: 60rpx;
+.myProfit .profit .money {
+  font-size: 64rpx;
   font-weight: 600;
-}
-.myProfit .profit button {
-  background-color: #ffc222;
   color: #fff;
+  margin-top: 32rpx;
+}
+.myProfit .detail_btn {
+  display: flex;
+  padding: 52rpx 50rpx 0 50rpx;
+  align-items: center;
+  color: #5c5a58;
+  font-size: 32rpx;
+  justify-content: space-between;
+}
+.myProfit .detail_btn .button {
+  height: 64rpx;
+  width: 172rpx;
+  background-color: #2f88e5;
+  color: #fff;
+  border-radius: 33rpx;
+  text-align: center;
+  line-height: 64rpx;
 }
 .myProfit .explain {
   background-color: #fff;
   width: calc( 100vw - 80rpx );
-  margin: 20rpx auto;
-  padding: 40rpx;
+  margin: 64rpx auto;
+  color: #5c5a58;
 }
 .myProfit .explain .title {
-  font-size: 34rpx;
-  font-weight: 600;
+  margin-bottom: 14rpx;
 }
 .myProfit .explain .content {
-  font-size: 30rpx;
+  line-height: 54rpx;
 }

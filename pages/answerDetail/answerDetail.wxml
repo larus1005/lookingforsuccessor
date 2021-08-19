@@ -1,0 +1,30 @@
+<view class="answerDetail">
+    <view class="question_wrap">
+        <view class="intentionPosition">意向职位:{{position.company}}{{position.name}}</view>
+        <view class="question">{{question.question}}</view>
+        <view class="bottom">
+            <view class="questioner">来自{{quizzer}}的提问</view>
+            <view class="time">发布于{{question.create_time}}</view>
+        </view>
+    </view>
+    <view class="seniorinfo_wrap">
+        <image class="" src="{{ replier.avatarUrl}}" mode="widthFix"></image>
+        <view class="seniorinfo">
+            <view class="seniorName">{{replier.nickname}}</view>
+            <view class="lastLogin">{{days}}天前来过</view>
+        </view>
+    </view>
+    <view class="answer_wrap" wx:if="{{question.reply}}">
+        <text class="answer">{{question.reply}}
+        </text>
+        <view class="update_time">
+            发布于{{question.reply_time}}
+        </view>
+          
+    </view>
+    <view wx:else>
+        尚未回答
+    </view>
+<!--       
+    <view class="submit_button" bind:tap="evaluate">写评价</view> -->
+</view>

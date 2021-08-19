@@ -1,223 +1,63 @@
-<!-- index.wxml -->
-<!-- <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view> -->
 <view class="shixiquan">
   <view class="searchBox">
-    <navigator class="chooseCity" url="../switchcity/switchcity"> 
-    <text class="iconfont icon-xiangxiajiantou"></text>
-        {{currentCity}}
+    <!-- 城市选择组件 -->
+    <navigator class="chooseCity" url="../switchcity/switchcity">
+      {{currentCity}}  <text class="iconfont icon-xiangxiajiantou"></text>
     </navigator>
-   
-    <searchInput></searchInput>
-    <view class="cancel">
-     <image class="" src="../../pics/reset.png">
-       
-     </image>
+    <!-- 搜索组件 -->
+    <view class="search">
+      <image src="../../pics/search.png" mode="widthFix"></image>
+      <input type="text" placeholder="搜企业" confirm-type="搜索" bindconfirm="handleSearch" placeholder-class="phcolor" value="{{search}}" />
+    </view>
+    <view class="" bindtap="handleReset">
+      <image class="reset" src="../../pics/reset.png"></image>
     </view>
   </view>
   <!-- 轮播图 -->
   <div class="swiper">
     <swiper class="" indicator-dots="true" autoplay="true" interval="2000" duration="500" circular>
-      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
-        <image class="" src="{{item.image_src}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+      <swiper-item wx:for="{{bannerList}}" wx:key="goods_id">
+        <image class="" src="{{item?item:'/pics/baaner.jpg'}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
       </swiper-item>
     </swiper>
   </div>
   <!-- tab栏 -->
-  <tabs Itemtabs="{{tabs}}" bindmytap="handleItem">
+  <tabs Itemtabs="{{tabs}}" bindmytap="handleTabsItem">
     <view class="itemContianer">
-      <!-- 运营/产品模块 -->
-      <view wx:if="{{tabs[0].isActive}}">
-      <view class="jobCard" >
-        <navigator url="/pages/detail/detail">
-          <view class="job">
-            <view class="top">
-              <view class="jobTitle">{{content.jobtitle}}</view>
-            </view>
-            <view class="jobDetail">
-              {{content.address}}|
-          {{content.type}}|
-          {{content.time}}
-            </view>
-            <view class="jobTags">
-              <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-              <view class="portrait">
-                 <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
-              </view>
-              <view class="bagContent">
-                “工作量和收获成正比的一份实习，非常能够提升个人能力和素质，需要具有良好的沟通能力”
-              </view>
-            </view>
-          </view>
-        </navigator>
+      <!-- 职位数据加载 -->
+      <view wx:if="{{positions.length==0}}" class="loading">
+        <image src="../../pics/position.png" mode="widthFix" class="pimage"></image>
+        <view class="ptext">相关职位持续更新中~</view>
       </view>
-        
-        <navigator url="/pages/detail/detail">
-          <view class="job">
-            <view class="top">
-              <view class="jobTitle">{{content.jobtitle}}</view>
-            </view>
-            <view class="jobDetail">
-              {{content.address}}|
-          {{content.type}}|
-          {{content.time}}
-            </view>
-            <view class="jobTags">
-              <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-              <view class="portrait">
-                 <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
+      <view>
+        <view class="jobCard" wx:for="{{positions}}" wx:key="_id">
+          <navigator url="/pages/detail/detail?pid={{item._id}}">
+            <view class="job">
+              <view class="top">
+                <view class="jobTitle">{{item.company}}-{{item.name}}</view>
               </view>
-  
-              <view class="bagContent">
-                “工作量和收获成正比的一份实111111111111111111111122222222222222222，”
+              <view class="jobDetail">
+                {{item.location}}  |
+          {{item.type}}  |
+          {{item.create_time}}
               </view>
-            </view>
-          </view>
-        </navigator>
-        <navigator url="/pages/detail/detail">
-          <view class="job">
-            <view class="top">
-              <view class="jobTitle">{{content.jobtitle}}</view>
-            </view>
-            <view class="jobDetail">
-              {{content.address}}|
-          {{content.type}}|
-          {{content.time}}
-            </view>
-            <view class="jobTags">
-              <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-              <view class="portrait">
-                 <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
+              <view class="jobTags">
+                <view>{{item.tag1}}</view>
+                <view>{{item.tag2}}</view>
+                <view>{{item.tag3}}</view>
               </view>
-  
-              <view class="bagContent">
-                “工作量和收获成正比的一份实111111111111111111111122222222222222222，”
+              <view class="silkbag">
+                <view class="portrait">
+                  <image class="" src="{{item.user[0].avatarUrl}}" mode="widthFix"></image>
+                </view>
+                <view class="bagContent">{{item.tip}}</view>
               </view>
             </view>
-          </view>
-        </navigator>
-        <navigator url="/pages/detail/detail">
-          <view class="job">
-            <view class="top">
-              <view class="jobTitle">{{content.jobtitle}}</view>
-            </view>
-            <view class="jobDetail">
-              {{content.address}}|
-          {{content.type}}|
-          {{content.time}}
-            </view>
-            <view class="jobTags">
-              <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-              <view class="portrait">
-                 <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
-              </view>
-  
-              <view class="bagContent">
-                “工作量和收获成正比的一份实111111111111111111111122222222222222222，”
-              </view>
-            </view>
-          </view>
-        </navigator>
-        <navigator url="/pages/detail/detail">
-          <view class="job">
-            <view class="top">
-              <view class="jobTitle">{{content.jobtitle}}</view>
-            </view>
-            <view class="jobDetail">
-              {{content.address}}|
-          {{content.type}}|
-          {{content.time}}
-            </view>
-            <view class="jobTags">
-              <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-              <view class="portrait">
-                 <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
-              </view>
-  
-              <view class="bagContent">
-                “工作量和收获成正比的一份实111111111111111111111122222222222222222，”
-              </view>
-            </view>
-          </view>
-        </navigator>
-      </view>
-      <!-- 研发模块 -->
-      <view wx:elif="{{tabs[1].isActive}}">
-        <navigator url="/pages/detail/detail">
-          <view class="job">
-            <view class="top">
-              <view class="jobTitle">{{content.jobtitle}}</view>
-            </view>
-            <view class="jobDetail">
-              {{content.address}}|
-          {{content.type}}|
-          {{content.time}}
-            </view>
-            <view class="jobTags">
-              <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-              <view class="portrait">
-                 <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
-              </view>
-  
-              <view class="bagContent">
-                “工作量和收获成正比的一份实111111111111111111111122222222222222222，”
-              </view>
-            </view>
-          </view>
-        </navigator>
-      </view>
-      <!-- 其他模块 -->
-      <view wx:else="{{tabs[2].isActive}}">
-      <navigator url="/pages/detail/detail">
-          <view class="job">
-            <view class="top">
-              <view class="jobTitle">{{content.jobtitle}}</view>
-            </view>
-            <view class="jobDetail">
-              {{content.address}}|
-          {{content.type}}|
-          {{content.time}}
-            </view>
-            <view class="jobTags">
-              <view wx:for="{{tags}}" wx:key="id">{{item.name}}</view>
-            </view>
-            <view class="silkbag">
-              <view class="portrait">
-                 <image class="" src="../../pics/1.jpg" mode="widthFix"></image>
-              </view>
-  
-              <view class="bagContent">
-                “工作量和收获成正比的一份实111111111111111111111122222222222222222，”
-              </view>
-            </view>
-          </view>
-        </navigator>
+          </navigator>
+        </view>
       </view>
     </view>
   </tabs>
-
 </view>
-  <!-- 自定义tabbar -->
-  <tabbar tabbar="{{tabbar}}"></tabbar>
+<!-- 自定义tabbar -->
+<tabbar tabbar="{{tabbar}}"></tabbar>

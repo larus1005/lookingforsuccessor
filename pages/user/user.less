@@ -6,7 +6,7 @@
         height: 282rpx;
         background: linear-gradient(rgba(47, 136, 229, 1), rgba(78, 183, 243, 1));
         position: relative;
-        margin-bottom: 226rpx;
+        margin-bottom: 100rpx;
 
         .user_info {
             position: absolute;
@@ -36,7 +36,7 @@
 
     .personal {
         width: ~'calc( 100vw - 100rpx )';
-        margin: 0 auto 104.6rpx;
+        margin: 0 auto;
         color: rgb(43, 40, 37);
 
         .personalContent {
@@ -52,6 +52,44 @@
 
     .information {
         width: ~'calc( 100vw - 100rpx )';
+        margin: 0 auto 50rpx;
+
+        navigator {
+            display: flex;
+            justify-content: space-between;
+            font-size: 30rpx;
+            padding: 24.6rpx 0 25.4rpx;
+            border-bottom: 2rpx solid rgb(236, 236, 236);
+        }
+        .icon-hongdianx {
+            position: relative;
+            color: red;
+            left: 10rpx;
+            top:-3rpx;
+            font-size: 20rpx;
+        }
+                        
+
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            font-size: 30rpx;
+            padding: 24.6rpx 0 25.4rpx;
+            border-bottom: 2rpx solid rgb(236, 236, 236);
+            ;
+            position: relative;
+
+            button {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+    }
+
+    .myUtils {
+        width: ~'calc( 100vw - 100rpx )';
         margin: 0 auto;
 
         navigator {
@@ -62,6 +100,21 @@
             border-bottom: 2rpx solid rgb(236, 236, 236);
         }
 
-    }
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            font-size: 30rpx;
+            padding: 24.6rpx 0 25.4rpx;
+            border-bottom: 2rpx solid rgb(236, 236, 236);
+            ;
+            position: relative;
 
+            button {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+    }
 }

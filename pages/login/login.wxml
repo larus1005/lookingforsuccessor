@@ -1,0 +1,10 @@
+<view class="login">
+    <image class="logoPic" src="../../pics/logolong.png" mode="widthFix">
+    </image>
+    <!-- <button bindtap="getUserProfile" type="default">
+        
+    </button> -->
+    <view class="log" bind:tap="getUserProfile">微信授权登录</view>
+    <view class="tip" >登录后体验「职位发布」 「提问咨询」等更多功能</view>
+</view>
+  

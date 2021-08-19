@@ -1,25 +1,24 @@
-<!--pages/myProfit/myProfit.wxml-->
+<!-- pages/myProfit/myProfit.wxml -->
 <view class="myProfit">
     <view class="profit">
-        <view class="amount">
-            <view class="money">
-                ￥66.66
-            </view>
-            <view>
-                待提现 ￥66.66
-            </view>
-        </view>
-        
-         <button size="mini">
-                提现
-         </button> 
+        <view>累计收益（元）</view>
+        <view class="money">{{userInfo.totalAccount}}</view>
+    </view>
+    <view class="detail_btn">
+        <view>可提现金额（元）：{{userInfo.withDrawable}}</view>
+        <view class="button">提现</view>
     </view>
     <view class="explain">
         <view class="title">
             收益说明
+            <text class="iconfont icon-wenhao"></text>
         </view>
         <view class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.
+            <view>1.当您为回答者，每完成一条问答将获得提问者付费的90%作为收益，例如：提问者付费5元进行提问，回答者完成回答后所获得的收益为5*90%=4.5（元）</view>
+            <view>2.累计收益为历史完成的全部问答收益之和，即：累计收益=已完成回答数*单条问答收益</view>
+            <view>
+                3.当您的未提现金额达到提现标准（>0元）时，您可点击发起提现申请。我们收到申请后，将在提现周期内（5个工作日）对您的收入进行财务结算，确认无误后提现至微信钱包。每个提现周期内仅可以发起1次提现
+            </view>
         </view>
     </view>
 </view>

@@ -1,0 +1,30 @@
+/* pages/evaluate/evaluate.wxss */
+.evaluate_wrap {
+  width: calc(100vw - 100rpx);
+  margin: 0 auto;
+}
+.evaluate_wrap .evaluate_title {
+  margin: 46rpx auto 33rpx;
+  color: #2b2825;
+  font-size: 34rpx;
+  font-weight: 500;
+}
+.evaluate_wrap .evaluate_content textarea {
+  padding: 30rpx;
+  color: #5c5a58;
+  border-radius: 16rpx;
+  background-color: #eeeff1;
+}
+.evaluate_wrap .submit_button {
+  width: calc(100vw - 100rpx);
+  height: 88rpx;
+  font-size: 32rpx;
+  font-weight: 300;
+  text-align: center;
+  background-color: #2f88e5;
+  line-height: 88rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  position: fixed;
+  bottom: 40rpx;
+}

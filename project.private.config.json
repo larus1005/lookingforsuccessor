@@ -1,0 +1,102 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "岗位详情",
+          "pathName": "pages/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "咨询前辈",
+          "pathName": "pages/question/question",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "发布",
+          "pathName": "pages/release/release",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的发布",
+          "pathName": "pages/myRelease/myRelease",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的收益",
+          "pathName": "pages/myProfit/myProfit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的提问",
+          "pathName": "pages/myQuestion/myQuestion",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的收藏",
+          "pathName": "pages/myCollection/myCollection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "城市切换",
+          "pathName": "pages/switchcity/switchcity",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我收到的提问",
+          "pathName": "pages/myAnswer/myAnswer",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "编辑答案",
+          "pathName": "pages/editAnswer/editAnswer",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "登录页面",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "登录页面",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

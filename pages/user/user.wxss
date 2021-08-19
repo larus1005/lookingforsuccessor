@@ -6,7 +6,7 @@
   height: 282rpx;
   background: linear-gradient(#2f88e5, #4eb7f3);
   position: relative;
-  margin-bottom: 226rpx;
+  margin-bottom: 100rpx;
 }
 .user .user_img_wrap .user_info {
   position: absolute;
@@ -29,7 +29,7 @@
 }
 .user .personal {
   width: calc( 100vw - 100rpx );
-  margin: 0 auto 104.6rpx;
+  margin: 0 auto;
   color: #2b2825;
 }
 .user .personal .personalContent navigator {
@@ -41,7 +41,7 @@
 }
 .user .information {
   width: calc( 100vw - 100rpx );
-  margin: 0 auto;
+  margin: 0 auto 50rpx;
 }
 .user .information navigator {
   display: flex;
@@ -49,4 +49,50 @@
   font-size: 30rpx;
   padding: 24.6rpx 0 25.4rpx;
   border-bottom: 2rpx solid #ececec;
+}
+.user .information .icon-hongdianx {
+  position: relative;
+  color: red;
+  left: 10rpx;
+  top: -3rpx;
+  font-size: 20rpx;
+}
+.user .information .contact {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  padding: 24.6rpx 0 25.4rpx;
+  border-bottom: 2rpx solid #ececec;
+  position: relative;
+}
+.user .information .contact button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.user .myUtils {
+  width: calc( 100vw - 100rpx );
+  margin: 0 auto;
+}
+.user .myUtils navigator {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  padding: 24.6rpx 0 25.4rpx;
+  border-bottom: 2rpx solid #ececec;
+}
+.user .myUtils .contact {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  padding: 24.6rpx 0 25.4rpx;
+  border-bottom: 2rpx solid #ececec;
+  position: relative;
+}
+.user .myUtils .contact button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }

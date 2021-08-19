@@ -1,6 +1,6 @@
 /* pages/release/release.wxss */
 .Title {
-  margin: 58rpx 0 38rpx 50rpx;
+  margin: 58rpx 0 28rpx 50rpx;
   display: flex;
   align-items: center;
 }
@@ -18,9 +18,9 @@
   display: flex;
   justify-content: space-between;
   font-size: 28rpx;
-  margin: 14rpx 50rpx;
+  margin: 29rpx 50rpx;
   border-bottom: 2rpx solid #ececec;
-  padding-bottom: 8rpx;
+  padding-bottom: 9rpx;
 }
 .input_wrap text {
   font-weight: 500;
@@ -30,6 +30,15 @@
   text-align: right;
   width: 364rpx;
 }
+.input_wrap .placeholder {
+  color: #5c5a58;
+}
+.input_wrap .nullCompany,
+.input_wrap .nullName,
+.input_wrap .nullMail,
+.input_wrap .nullLocation {
+  color: red;
+}
 .select_wrap {
   font-size: 28rpx;
   margin: 14rpx 50rpx;
@@ -38,81 +47,81 @@
   justify-content: space-between;
   border-bottom: 2rpx solid #ececec;
   padding-bottom: 8rpx;
-  /* 下拉框 */
 }
 .select_wrap text {
   font-weight: 500;
 }
-.select_wrap .select_box {
-  /* margin: 0 auto; */
+.select_wrap .choosetype {
+  display: flex;
+  color: #5c5a58;
+}
+.select_wrap .choosetype view {
   text-align: right;
-  position: relative;
-  width: 200rpx;
+  width: 364rpx;
 }
-.select_wrap .select_box .select {
-  /* border: 1px solid #efefef; */
-}
-.select_wrap .select_box .select .select_text {
-  color: #5c5a58;
-  font-weight: normal;
-}
-.select_wrap .select_box .option_box {
-  position: absolute;
-  width: 100%;
-  height: 0;
-  overflow-y: auto;
-  transition: height 0.3s;
-  z-index: 100;
-}
-.select_wrap .select_box .option_box .option {
-  text-align: center;
-  line-height: 60rpx;
-  background-color: #efefef;
-  display: block;
-  color: #5c5a58;
-  font-weight: normal;
+.select_wrap .nullType {
+  color: red;
 }
 .textarea_wrap {
   font-size: 28rpx;
+  margin-top: 28rpx;
 }
 .textarea_wrap text {
   font-weight: 500;
   margin: 0 50rpx;
 }
+.textarea_wrap .textarea-placeholder {
+  color: #5c5a58;
+}
 .textarea_wrap textarea {
   padding: 30rpx;
   color: #5c5a58;
+  border-radius: 16rpx;
   width: calc(100vw - 100rpx);
   background-color: #eeeff1;
-  margin: auto;
-  line-height: 30rpx;
+  margin: 28rpx auto 0;
+}
+.textarea_wrap .nullDetail,
+.textarea_wrap .nullTip {
+  color: red;
+}
+.textarea_wrap .text_count {
+  float: right;
+  margin-right: 25rpx;
 }
 .choose_wrap {
+  margin: -28rpx 50rpx 0;
+}
+.choose_wrap .choose_tag_wrap {
   display: flex;
   font-size: 28rpx;
-  margin: 14rpx 50rpx;
+  padding: 28rpx 0 14rpx 0;
   border-bottom: 2rpx solid #ececec;
-  padding-bottom: 8rpx;
 }
-.choose_wrap text {
+.choose_wrap .choose_tag_wrap text {
   font-weight: 500;
 }
-.choose_wrap view {
+.choose_wrap .choose_tag_wrap view {
   margin-left: 30rpx;
 }
-.choose_wrap .nonselect {
+.choose_wrap .choose_tag_wrap .nonselect {
   border-radius: 12rpx;
   border: 1rpx solid #000;
   font-size: 22rpx;
   padding: 6rpx 14rpx;
 }
-.choose_wrap .select {
+.choose_wrap .choose_tag_wrap .select {
   color: #fff;
   font-size: 22rpx;
   padding: 6rpx 14rpx;
   border-radius: 12rpx;
   border: 1rpx solid #a9c5e3;
   background-color: #a9c5e3;
+}
+.choose_wrap .choose_tag_wrap .nullOvertime,
+.choose_wrap .choose_tag_wrap .nullDifficulty,
+.choose_wrap .choose_tag_wrap .nullHarvest {
+  color: red;
 }
 .submit {
   width: calc(100vw - 100rpx);
@@ -124,9 +133,11 @@
   line-height: 88rpx;
   color: #fff;
   border-radius: 8rpx;
-  margin: 80rpx auto;
+  margin: 80rpx auto 0;
 }
 .tip {
   font-size: 20rpx;
   color: #999999;
+  text-align: center;
+  margin: 22rpx auto 54rpx;
 }

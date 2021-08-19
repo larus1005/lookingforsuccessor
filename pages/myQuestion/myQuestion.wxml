@@ -1,26 +1,22 @@
 <view class="myQuestion">
-    <view class="QuestionCard" wx:for="{{job}}" wx:key="id">
+     <view wx:if="{{!send[0]}}" class="null_question">
+        <image class="" src="../../pics/collection.png" mode="widthFix"></image>
+        <view>这里空空如也</view>
+    </view>
+    <navigator class="QuestionCard" wx:for="{{send}}" wx:key="id" url="../answerDetail/answerDetail?qid={{item._id}}">
         <view class="jobTitle">
-            <view>意向职位</view>
-            <view class="titleContent">{{item.jobtitle}}</view>
+            <navigator class="titleContent " url="../detail/detail?pid={{item.pid}}">意向职位:{{item.positionDetail[0].company}}{{item.positionDetail[0].name}}</navigator>
+            <text class="iconfont icon-arrow-right"></text>
             <view class="status">
-                <view class="questionStatusFinish" wx:if="{{item.status===1}}">已完成</view>
-                <view class="questionStatusWaiting" wx:elif="{{item.status===2}}">等待回答</view>
-                <view class="questionStatusRefund" wx:else="{{item.status===3}}">已退款</view>
+                <view class="questionStatusFinish" wx:if="{{item.status===0}}">等待回答</view>
+                <view class="questionStatusWaiting" wx:elif="{{item.status===1}}">已完成</view>
+                <view class="questionStatusRefund" wx:else="{{item.status===2}}">已退款</view>
             </view>
         </view>
-        <view class="question">
-            <view class="title">问题：</view>
-            <view class="content">{{item.question}}</view>
-        </view>
-        <view class="answer">
-            <view class="title">回答：</view>
-            <view class="content">{{item.answer}}</view>
-        </view>
+        <view class="question">{{item.question}}</view>
         <view class="bottom">
-            <view class="time">2020-12-30 23:00</view>
-            <!-- 没有跳转到评价页面 -->
-            <view class="eval" wx:if="{{item.isFinished}}">去评价</view>
+            <view class="time">{{item.create_time}}</view>
+            <!-- <navigator class="eval" url="../evaluate/evaluate" wx:if="{{item.status===1}}">去评价</navigator> -->
         </view>
-    </view>
+    </navigator>
 </view>
